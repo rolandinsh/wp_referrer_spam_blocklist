@@ -50,19 +50,20 @@ class wpReferralBlacklist
      * */
     public function referral($uri)
     {
-        if (WP_DEBUG || (isset($_GET) && isset($_GET['testreferral'])) ) {
-            if (isset($_GET) && isset($_GET['testreferral']) && !empty($_GET['testreferral'])) {
-                $uri = $_GET['testreferral'];
-            }
-            echo '<pre>';
-            var_dump(
-                    array(
-                        'WordPress plugin' => 'WP referrer spam blacklist',
-                        'debug' => $uri,
-                    )
-            );
-            die;
-        }
+//        if ( isset($_GET) && isset($_GET['testreferral']) ) {
+//            if (isset($_GET) && isset($_GET['testreferral']) && !empty($_GET['testreferral'])) {
+//                $uri = $_GET['testreferral'];
+//            }
+//            echo '<pre>';
+//            var_dump(
+//                    array(
+//                        'WordPress plugin' => 'WP referrer spam blacklist',
+//                        'debug' => $uri,
+//                        'is referral spam' => true,
+//                    )
+//            );
+//            die;
+//        }
         return $uri ? $uri : wp_get_referer();
     }
 
