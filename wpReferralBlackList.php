@@ -44,26 +44,19 @@ class wpReferralBlacklist
         return $this->blocker();
     }
 
+    public static function log($wp_referralblock_debug)
+    {
+        if (apply_filters('wp_referralblock_debug_log', defined('WP_DEBUG_LOG') && WP_DEBUG_LOG)) {
+            error_log(print_r(compact('wp_referralblock_debug'), true));
+        }
+    }
+
     /**
       get referrer
      * @param string $uri
      * */
     public function referral($uri)
     {
-//        if ( isset($_GET) && isset($_GET['testreferral']) ) {
-//            if (isset($_GET) && isset($_GET['testreferral']) && !empty($_GET['testreferral'])) {
-//                $uri = $_GET['testreferral'];
-//            }
-//            echo '<pre>';
-//            var_dump(
-//                    array(
-//                        'WordPress plugin' => 'WP referrer spam blacklist',
-//                        'debug' => $uri,
-//                        'is referral spam' => true,
-//                    )
-//            );
-//            die;
-//        }
         return $uri ? $uri : wp_get_referer();
     }
 

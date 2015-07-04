@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: WP referrer spam blacklist
  * Plugin URI: http://http://simplemediacode.com/?utm_source=WPplugin%3Awp-referrer-spam-blacklist&utm_medium=wordpressplugin&utm_campaign=FreeWordPressPlugins&utm_content=v-1-0-0
@@ -50,4 +51,13 @@ if (!function_exists('add_action')) {
 include_once dirname(__FILE__) . '/blockList.php'; // in case someone need it somewhere else in WordPress site or PHP project
 include_once dirname(__FILE__) . '/wpReferralBlackList.php';
 
-new wpReferralBlacklist();
+try {
+    new wpReferralBlacklist();
+} catch (Exception $e) {
+    $wp_referralblock_debug = 'Caught exception: wpReferralBlacklist ' . $e->getMessage() . "\n";
+
+    if (apply_filters('wp_referralblock_debug_log', defined('WP_DEBUG_LOG') && WP_DEBUG_LOG)) {
+        error_log(print_r(compact('wp_referralblock_debug'), true));
+    }
+}
+
