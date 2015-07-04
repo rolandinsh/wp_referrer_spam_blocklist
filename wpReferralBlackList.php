@@ -27,8 +27,8 @@ class wpReferralBlacklist
     public $wprsbfolder = 'wp_referrer_spam_blacklist';
     public $wprsbline = 'wp-referrer-spam-blacklist';
 
-    const OPTINLVURI = ''; 
-    const OPTINENURI = ''; 
+    const OPTINLVURI = '';
+    const OPTINENURI = '';
 
     function __construct()
     {
@@ -41,34 +41,43 @@ class wpReferralBlacklist
 
     public function inits()
     {
-        
+        return $this->blocker();
     }
 
-/**
- get referrer
- * @param string $uri
-**/
-
+    /**
+      get referrer
+     * @param string $uri
+     * */
     public function referral($uri)
     {
+//        if (WP_DEBUG || (isset($_GET) && isset($_GET['testreferral'])) ) {
+//            if (isset($_GET) && isset($_GET['testreferral']) && !empty($_GET['testreferral'])) {
+//                $uri = $_GET['testreferral'];
+//            }
+//            var_dump(
+//                    array(
+//                        'WordPress plugin' => 'WP referrer spam blacklist',
+//                        'debug' => $uri,
+//                    )
+//            );
+//            die;
+//        }
         return $uri ? $uri : wp_get_referer();
     }
 
-/**
-where to redirect if blocked
-* @param string $uri
-**/
-
+    /**
+      where to redirect if blocked
+     * @param string $uri
+     * */
     public function wp_referralblock_redirect_uri($uri)
     {
-        return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : 'https://youtu.be/yFE6qQ3ySXE?t=40s'));
+        return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : 'about:blank')); // https://youtu.be/yFE6qQ3ySXE?t=40s
     }
 
-
-/**
-blocker 
- * @param string $uri
-**/
+    /**
+      blocker
+     * @param string $uri
+     * */
     public function blocker()
     {
         include_once dirname(__FILE__) . '/blockList.php';
