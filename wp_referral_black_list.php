@@ -55,7 +55,7 @@ try {
     new wpReferralBlacklist();
 } catch (Exception $e) {
     $wp_referralblock_debug = 'Caught exception: wpReferralBlacklist ' . $e->getMessage() . "\n";
-
+    // Akismet style
     if (apply_filters('wp_referralblock_debug_log', defined('WP_DEBUG_LOG') && WP_DEBUG_LOG)) {
         error_log(print_r(compact('wp_referralblock_debug'), true));
     }
