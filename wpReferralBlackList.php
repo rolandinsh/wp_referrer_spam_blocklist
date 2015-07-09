@@ -17,9 +17,11 @@ if (!function_exists('add_action')) {
     echo "Hi! I'm nice WordPress plugin from Umbrovskis.com, but I am more useful if You are using WordPress. So, don't me call directly!.";
     exit;
 }
-/* hardcoded, no overwrite */
-define('WPREFBLACKLISTV', '1.0.0');
 
+/**
+ * Main class wpReferralBlacklist
+ * @since 1.0.0
+ */ 
 class wpReferralBlacklist
 {
 
