@@ -1,15 +1,18 @@
 # WordPress referrer spam blacklist plugin
 
-[WordPress plugin to fight with referrer spam](https://github.com/rolandinsh/wp_referrer_spam_blacklist). List based on https://github.com/piwik/referrer-spam-blacklist (Community-contributed list of referrer spammers).
+WordPress plugin to fight with referrer spam list is based on https://github.com/piwik/referrer-spam-blacklist (Community-contributed list of referrer spammers).
 
 No configuration! (yet!) 
-Plugin in background redirects referral spammer to blank page ( about:blank ). Redirect link can be altered via filter `wp_referralblock_redirect_uri`. 
 
-Plugin is for sites that can't edit their `.htaccess` or configure NGINX or Apache servers.
+Plugin in background redirects referral spammer to blank page ( ```about:blank``` ). Redirect link can be altered via filter `wp_referralblock_redirect_uri`. 
+
+Plugin is for sites that can't edit their ```.htaccess``` or configure NGINX or Apache servers.
+
+### Referrer spam
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Referer_spam): 
 
-`Referrer spam (also known as log spam or referrer 
+```Referrer spam (also known as log spam or referrer 
 bombing) is a kind of spamdexing (spamming aimed 
 at search engines). The technique involves making 
 repeated web site requests using a fake referer URL 
@@ -21,12 +24,16 @@ as they crawl the access logs.
 
 This benefits the spammer because the free link improves 
 the spammer site's search engine ranking owing 
-to link-counting algorithms that search engines use.`
+to link-counting algorithms that search engines use.```
 
 ## Download
 
 * from WordPress.org: https://wordpress.org/plugins/wp-referrer-spam-blacklist/ 
 * WP-CLI ```wp plugin install wp-referrer-spam-blacklist --activate``` 
+
+## How to add new spammer?
+
+Do it on Piwik's project: https://github.com/piwik/referrer-spam-blacklist 
 
 ## Was usefull?
 
