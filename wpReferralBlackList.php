@@ -32,9 +32,9 @@ class wpReferralBlacklist
 
     function __construct()
     {
-        add_action('init', array($this, 'inits'));
+        add_action('init', array($this, 'inits'), 1);
         add_action('wp_head', array($this, 'headGen'));
-        add_action('plugin_row_meta', array($this, 'set_plugin_meta'), 10, 2);
+        add_action('plugin_row_meta', array($this, 'setPluginMeta'), 10, 2);
         // Load a text domain
         //load_plugin_textdomain('wprsb', false, dirname(plugin_basename(__FILE__)) . '/lang/');
     }
@@ -64,7 +64,7 @@ class wpReferralBlacklist
       where to redirect if blocked
      * @param string $uri
      * */
-    public function wp_referralblock_redirect_uri($uri)
+    public function wpReferralblockRedirectUri($uri)
     {
         return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : 'about:blank')); // https://youtu.be/yFE6qQ3ySXE?t=40s
     }
@@ -80,7 +80,7 @@ class wpReferralBlacklist
         $getBlocklist = $theBlocklist->theList();
         $isOnBlocklist = in_array(parse_url($this->referral(), PHP_URL_HOST), $getBlocklist) ? in_array(parse_url($this->referral(), PHP_URL_HOST), $getBlocklist) : false;
         if ($isOnBlocklist) {
-            wp_redirect($this->wp_referralblock_redirect_uri(), 301);
+            wp_redirect($this->wpReferralblockRedirectUri(), 301);
             exit;
         }
     }
@@ -100,13 +100,14 @@ class wpReferralBlacklist
      *
      * @since 1.0.0
      */
-    function set_plugin_meta($links, $file)
-    {
-        $plugin = plugin_basename(__FILE__);
-        if ($file == $plugin) {
+    function setPluginMeta($links, $file)
+    { 
+        //$plugin = plugin_basename(__FILE__);
+ 
+        if ($file == WPRSBFILE) {
             return array_merge($links, array(
-                // '<a href="http://simplemediacode.com/" target="_blank"><span style="color: #c00; margin:0; border: 1px solid #E6DB55; padding: 2px 3px; background-color:#FFFFE0;border-radius: 3px;">' . __('Only paid support','frypepage_widget') . '</span></a>',
-                '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted">' . __('Donate', 'wprsb') . '</a>'
+                '<a href="http://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV">' . __("My Amazon wishlist", "wprsb") . '</a>',
+                '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted">' . __('Donate via PayPal', 'wprsb') . '</a>'
             ));
         }
         return $links;

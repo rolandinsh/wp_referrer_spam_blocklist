@@ -4,7 +4,7 @@
  * Plugin Name: WP referrer spam blacklist
  * Plugin URI: http://http://simplemediacode.com/?utm_source=WPplugin%3Awp-referrer-spam-blacklist&utm_medium=wordpressplugin&utm_campaign=FreeWordPressPlugins&utm_content=v-1-0-0
  * Description: WordPress plugin to fight with referrer spam. List based on https://github.com/piwik/referrer-spam-blacklist (Community-contributed list of referrer spammers)
- * Version: 1.0.0
+ * Version: 1.0.1
  * Stable tag: 1.0.0
  * Requires at least: 4.0
  * Tested up to: 4.2.2
@@ -50,7 +50,7 @@ if (!function_exists('add_action')) {
 }
 include_once dirname(__FILE__) . '/blockList.php'; // in case someone need it somewhere else in WordPress site or PHP project
 include_once dirname(__FILE__) . '/wpReferralBlackList.php';
-
+define('WPRSBFILE', basename(dirname(__FILE__)) . '/' . basename(__FILE__));
 try {
     new wpReferralBlacklist();
 } catch (Exception $e) {
