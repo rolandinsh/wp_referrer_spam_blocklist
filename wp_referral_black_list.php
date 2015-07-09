@@ -5,7 +5,7 @@
  * Plugin URI: http://http://simplemediacode.com/?utm_source=WPplugin%3Awp-referrer-spam-blacklist&utm_medium=wordpressplugin&utm_campaign=FreeWordPressPlugins&utm_content=v-1-0-0
  * Description: WordPress plugin to fight with referrer spam. List based on https://github.com/piwik/referrer-spam-blacklist (Community-contributed list of referrer spammers)
  * Version: 1.0.1
- * Stable tag: 1.0.0
+ * Stable tag: 1.0.1
  * Requires at least: 4.0
  * Tested up to: 4.2.2
  * Author: Rolands Umbrovskis

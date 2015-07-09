@@ -80,7 +80,7 @@ class wpReferralBlacklist
         include_once dirname(__FILE__) . '/blockList.php';
         $theBlocklist = new blockList();
         $getBlocklist = $theBlocklist->theList();
-        $isOnBlocklist = in_array(parse_url($this->referral(), PHP_URL_HOST), $getBlocklist) ? in_array(parse_url($this->referral(), PHP_URL_HOST), $getBlocklist) : false;
+        $isOnBlocklist = in_array(parse_url($this->referral(wp_get_referer()), PHP_URL_HOST), $getBlocklist) ? in_array(parse_url($this->referral(wp_get_referer()), PHP_URL_HOST), $getBlocklist) : false;
         if ($isOnBlocklist) {
             wp_redirect($this->wpReferralblockRedirectUri(), 301);
             exit;

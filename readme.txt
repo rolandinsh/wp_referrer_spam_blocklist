@@ -6,7 +6,7 @@ License URI: http://simplemediacode.com/license/gpl/
 Tags: referral spam, anti-spam, antispam, comment moderation, comment spam, comments, contact form spam, spam, protection, block spam, spam blocker, spam filter, spambot, 
 Requires at least: 4.0
 Tested up to: 4.2.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 WordPress plugin to fight with community-contributed list of referrer spammers
 
@@ -56,9 +56,8 @@ None
 == Changelog ==
 
 = 1.0.1 =
-* Better naming
-* code comments
-* and my wishlist 
+* Enhance: Better naming, code comments and my wishlist 
+* FIX: E_WARNING Missing argument 1 for wpReferralBlacklist::referral(),
 
 = 1.0.0 =
 
@@ -67,7 +66,7 @@ First init
 == Upgrade Notice ==
 
 = 1.0.1 =
-* Better naming, code comments, and my wishlist 
+* FIX: E_WARNING Missing argument 1 for wpReferralBlacklist::referral(),
 
 = 1.0.0 =
 * First init
