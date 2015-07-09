@@ -23,10 +23,12 @@ This benefits the spammer because the free link improves
 the spammer site's search engine ranking owing 
 to link-counting algorithms that search engines use.`
 
-Download from WordPress.org: https://wordpress.org/plugins/wp-referrer-spam-blacklist/ 
+## Download
 
-Was usefull?
+* from WordPress.org: https://wordpress.org/plugins/wp-referrer-spam-blacklist/ 
+* WP-CLI ```wp plugin install wp-referrer-spam-blacklist --activate``` 
 
-My Amazon wishlist: http://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV
+## Was usefull?
 
-Donate: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted 
+* My Amazon wishlist: http://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV
+* Donate: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted 
