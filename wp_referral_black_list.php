@@ -2,10 +2,10 @@
 
 /**
  * Plugin Name: WP referrer spam blacklist
- * Plugin URI: http://http://simplemediacode.com/?utm_source=WPplugin%3Awp-referrer-spam-blacklist&utm_medium=wordpressplugin&utm_campaign=FreeWordPressPlugins&utm_content=v-1-0-0
- * Description: WordPress plugin to fight with referrer spam. List based on https://github.com/piwik/referrer-spam-blacklist (Community-contributed list of referrer spammers)
- * Version: 1.0.1
- * Stable tag: 1.0.1
+ * Plugin URI: http://http://simplemediacode.com/?utm_source=WPplugin%3Awp-referrer-spam-blacklist&utm_medium=wordpressplugin&utm_campaign=FreeWordPressPlugins&utm_content=v-1-0-2
+ * Description: WordPress plugin to fight with referrer spammers (like semalt, buttons-for-website and many more) and do not mess Google Analytics
+ * Version: 1.0.2
+ * Stable tag: 1.0.2
  * Requires at least: 4.0
  * Tested up to: 4.2.2
  * Author: Rolands Umbrovskis
@@ -53,7 +53,7 @@ if (!function_exists('add_action')) {
  * Version of wpReferralBlacklist
  * @since 1.0.0
  */ 
-define('WPREFBLACKLISTV', '1.0.0');
+define('WPREFBLACKLISTV', '1.0.2');
 /**
  * Define main file
  * @since 1.0.1

@@ -25,7 +25,7 @@ if (!function_exists('add_action')) {
 class wpReferralBlacklist
 {
 
-    public $version = '1.0.0';
+    public $version = '1.0.2';
     public $wprsbfolder = 'wp_referrer_spam_blacklist';
     public $wprsbline = 'wp-referrer-spam-blacklist';
 
