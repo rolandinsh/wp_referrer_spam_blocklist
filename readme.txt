@@ -8,13 +8,14 @@ Requires at least: 4.0
 Tested up to: 4.2.2
 Stable tag: 1.0.1
 
-WordPress plugin to fight with community-contributed list of referrer spammers
+WordPress plugin to fight with community-contributed list of referrer spammers (like semalt)
 
 == Description ==
 
 [WordPress plugin to fight with referrer spam](https://github.com/rolandinsh/wp_referrer_spam_blacklist). List based on https://github.com/piwik/referrer-spam-blacklist (Community-contributed list of referrer spammers).
 
 No configuration! (yet!) 
+
 Plugin in background redirects referral spammer to blank page ( about:blank ). Redirect link can be altered via filter `wp_referralblock_redirect_uri`. 
 
 Plugin is for sites that can't edit their `.htaccess` or configure NGINX or Apache servers.
@@ -61,7 +62,7 @@ None
 
 = 1.0.0 =
 
-First init
+Proof of concept
 
 == Upgrade Notice ==
 
@@ -69,4 +70,5 @@ First init
 * FIX: E_WARNING Missing argument 1 for wpReferralBlacklist::referral(),
 
 = 1.0.0 =
-* First init
+
+* Proof of concept

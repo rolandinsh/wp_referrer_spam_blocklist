@@ -35,6 +35,11 @@ to link-counting algorithms that search engines use.```
 
 Do it on Piwik's project: https://github.com/piwik/referrer-spam-blacklist 
 
+## Versions
+
+[1.1.x](https://github.com/rolandinsh/wp_referrer_spam_blacklist/milestones/1.1) improvements
+[1.0.x](https://github.com/rolandinsh/wp_referrer_spam_blacklist/milestones/1.0) proof of concept
+
 ## Was usefull?
 
 * My Amazon wishlist: http://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV
