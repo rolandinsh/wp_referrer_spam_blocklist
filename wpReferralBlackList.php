@@ -25,7 +25,7 @@ if (!function_exists('add_action')) {
 class wpReferralBlacklist
 {
 
-    public $version = '1.0.2';
+    public $version = '1.0.3';
     public $wprsbfolder = 'wp_referrer_spam_blacklist';
     public $wprsbline = 'wp-referrer-spam-blacklist';
 
@@ -73,14 +73,14 @@ class wpReferralBlacklist
 
     /**
       blocker
-     * @param string $uri
      * */
     public function blocker()
     {
         include_once dirname(__FILE__) . '/blockList.php';
         $theBlocklist = new blockList();
         $getBlocklist = $theBlocklist->theList();
-        $isOnBlocklist = in_array(parse_url($this->referral(wp_get_referer()), PHP_URL_HOST), $getBlocklist) ? in_array(parse_url($this->referral(wp_get_referer()), PHP_URL_HOST), $getBlocklist) : false;
+        $blockable = in_array(parse_url($this->referral(wp_get_referer()), PHP_URL_HOST), $getBlocklist);
+        $isOnBlocklist = $blockable ? $blockable : false;
         if ($isOnBlocklist) {
             wp_redirect($this->wpReferralblockRedirectUri(), 301);
             exit;
@@ -107,7 +107,7 @@ class wpReferralBlacklist
         //$plugin = plugin_basename(__FILE__);
  
         if ($file == WPRSBFILE) {
-            return array_merge($links, array(
+            $links = array_merge($links, array(
                 '<a href="http://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV?tag=rolandinshde-21">' . __("My Amazon.DE wishlist", "wprsb") . '</a>',
                 '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted">' . __('Donate via PayPal', 'wprsb') . '</a>'
             ));
