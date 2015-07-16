@@ -3,26 +3,26 @@ Contributors: rolandinsh
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted
 License: GPL
 License URI: http://simplemediacode.com/license/gpl/
-Tags: referral spam, anti-spam, antispam, comment moderation, comment spam, comments, contact form spam, spam, protection, block spam, spam blocker, spam filter, spambot, bp, buddypress, bbpress, redirect, semalt, seo, analytics, analytics block, analytics spam, block google spam, google spam, semalt.com, spam attack, ghost referrers, google analytics referral spam, google referral spam, 
+Tags: referral spam, anti-spam, antispam, comment moderation, comment spam, comments, contact form spam, spam, protection, block spam, spam blocker, spam filter, spambot, bp, buddypress, bbpress, redirect, semalt, seo, analytics, analytics block, analytics spam, block google spam, google spam, semalt.com, spam attack, ghost referrers, google analytics, google analytics referral spam, google referral spam, 
 Requires at least: 4.0
 Tested up to: 4.2.2
 Stable tag: 1.0.2
 
-WordPress plugin to fight with referrer spammers (like semalt, buttons-for-website and many more) and do not mess Google Analytics
+WordPress plugin to fight with more than 270 referrer spammers (like semalt, buttons-for-website and many more).
 
 == Description ==
+
+List of spammers in [FAQ](https://wordpress.org/plugins/wp-referrer-spam-blacklist/faq/).
+
+No need for configuration! Plugin in background redirects referral spammer to blank page ( about:blank ). Redirect link can be altered via filter `wp_referralblock_redirect_uri`. 
+
+Plugin is for sites that can't edit their `.htaccess` or configure NGINX or Apache servers.
 
 Via [my LinkedIN post](https://www.linkedin.com/pulse/fighting-referral-spam-wordpress-way-rolands-umbrovskis-): Few months ago I started to collect referral spam pages in private file un bitbucket.org. Problem was that I did not know all spammers. Then, few weeks ago, I found that Piwik (Open source analytics) started their own "project", and they did the same thing I did - collected referral spam sites to block them from Your website.
 
 On my own server I do that at server level, but some of my clients have hosting, where You can not edit server settings. This week I came up with another solution - Wordpress plugin "WP referrer spam blacklist". I will update list every week from [Piwik's community-contributed list of spammers](https://github.com/piwik/referrer-spam-blacklist).
 
 If You have WordPress site and no knowledge about or access to server settings, I made that for You!
-
-No need for configuration!  
-
-Plugin in background redirects referral spammer to blank page ( about:blank ). Redirect link can be altered via filter `wp_referralblock_redirect_uri`. 
-
-Plugin is for sites that can't edit their `.htaccess` or configure NGINX or Apache servers.
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Referer_spam): 
 
