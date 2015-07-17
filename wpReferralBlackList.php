@@ -21,7 +21,7 @@ if (!function_exists('add_action')) {
 /**
  * Main class wpReferralBlacklist
  * @since 1.0.0
- */ 
+ */
 class wpReferralBlacklist
 {
 
@@ -43,6 +43,11 @@ class wpReferralBlacklist
 
     public function inits()
     {
+        // dummy debug
+//        if (isset($_GET) && $_GET['htlist'] == 'doit') {
+//            // will write to .htaccess ; There is NO DELETE function YET!!!
+//            $this->htaccess();
+//        }
         return $this->blocker();
     }
 
@@ -102,10 +107,10 @@ class wpReferralBlacklist
      *
      * @since 1.0.0
      */
-    function setPluginMeta($links, $file)
-    { 
+    public function setPluginMeta($links, $file)
+    {
         //$plugin = plugin_basename(__FILE__);
- 
+
         if ($file == WPRSBFILE) {
             $links = array_merge($links, array(
                 '<a href="http://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV?tag=rolandinshde-21">' . __("My Amazon.DE wishlist", "wprsb") . '</a>',
@@ -113,6 +118,50 @@ class wpReferralBlacklist
             ));
         }
         return $links;
+    }
+
+    /**
+     * Write .htaccess.
+     *
+     * @since 1.1.0
+     * @todo safe update, delete
+     */
+    public function htaccess()
+    {
+        // .htaccess path
+        $htaccess = ABSPATH . '.htaccess';
+
+        // does file exist and is writable?
+        if (file_exists($htaccess) && is_writable($htaccess)) {
+        /**
+         * @todo test why doesn't work without this line
+         */
+        include_once ABSPATH . '/wp-admin/includes/misc.php';
+            // load blacklist
+            $theBlacklist = new blockList();
+            $getBlacklist = $theBlacklist->theList();
+            // check array
+            if (!empty($getBlacklist)) {
+                // build lines
+                $htline = [];
+                $htline[] = '<IfModule mod_rewrite.c>';
+                $htline[] = '  RewriteEngine on';
+                // loop it!
+                foreach ($getBlacklist as $host) {
+                    $htline[] = '  RewriteCond %{HTTP_REFERER} ' . str_replace('.', '\.', $host).'  [NC]';
+                }
+
+                $htline[] = '  RewriteRule .* - [F]';
+                $htline[] = '</IfModule>';
+                try {
+                    
+                    // update htaccess
+                    insert_with_markers($htaccess, 'wpReferralBlacklist ', $htline);
+                } catch (exception $e) {
+                    echo $e->getMessage();
+                }
+            }
+        }
     }
 
 }
