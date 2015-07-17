@@ -133,10 +133,10 @@ class wpReferralBlacklist
 
         // does file exist and is writable?
         if (file_exists($htaccess) && is_writable($htaccess)) {
-        /**
-         * @todo test why doesn't work without this line
-         */
-        include_once ABSPATH . '/wp-admin/includes/misc.php';
+            /**
+             * @todo test why doesn't work without this line
+             */
+            include_once ABSPATH . '/wp-admin/includes/misc.php';
             // load blacklist
             $theBlacklist = new blockList();
             $getBlacklist = $theBlacklist->theList();
@@ -148,13 +148,13 @@ class wpReferralBlacklist
                 $htline[] = '  RewriteEngine on';
                 // loop it!
                 foreach ($getBlacklist as $host) {
-                    $htline[] = '  RewriteCond %{HTTP_REFERER} ' . str_replace('.', '\.', $host).'  [NC]';
+                    $htline[] = '  RewriteCond %{HTTP_REFERER} ' . str_replace('.', '\.', $host) . '  [NC]';
                 }
 
                 $htline[] = '  RewriteRule .* - [F]';
                 $htline[] = '</IfModule>';
                 try {
-                    
+
                     // update htaccess
                     insert_with_markers($htaccess, 'wpReferralBlacklist ', $htline);
                 } catch (exception $e) {
