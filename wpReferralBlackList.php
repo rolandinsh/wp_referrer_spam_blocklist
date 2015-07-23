@@ -25,7 +25,7 @@ if (!function_exists('add_action')) {
 class wpReferralBlacklist
 {
 
-    public $version = '1.0.3';
+    public $version = '1.0.4';
     public $wprsbfolder = 'wp_referrer_spam_blacklist';
     public $wprsbline = 'wp-referrer-spam-blacklist';
 
@@ -94,6 +94,7 @@ class wpReferralBlacklist
      */
     public function headGen()
     {
+        echo "\n" . '<!-- Referral spam blacklist by Rolands Umbrovskis (rolandinsh) http://umbrovskis.com/ -->' . "\n";
         echo "\n" . '<meta name="generator" content="http://simplemediacode.com/?utm_source=' . $this->wprsbline . '-' . $this->version . '" />' . "\n";
     }
 
