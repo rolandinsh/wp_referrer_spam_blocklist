@@ -25,7 +25,7 @@ if (!function_exists('add_action')) {
 class wpReferralBlacklist
 {
 
-    public $version = '1.0.5';
+    public $version = '1.0.6';
     public $wprsbfolder = 'wp_referrer_spam_blacklist';
     public $wprsbline = 'wp-referrer-spam-blacklist';
 
@@ -129,40 +129,40 @@ class wpReferralBlacklist
      */
     public function htaccess()
     {
-        // .htaccess path
-        $htaccess = ABSPATH . '.htaccess';
-
-        // does file exist and is writable?
-        if (file_exists($htaccess) && is_writable($htaccess)) {
-            /**
-             * @todo test why doesn't work without this line
-             */
-            include_once ABSPATH . '/wp-admin/includes/misc.php';
-            // load blacklist
-            $theBlacklist = new blockList();
-            $getBlacklist = $theBlacklist->theList();
-            // check array
-            if (!empty($getBlacklist)) {
-                // build lines
-                $htline = [];
-                $htline[] = '<IfModule mod_rewrite.c>';
-                $htline[] = '  RewriteEngine on';
-                // loop it!
-                foreach ($getBlacklist as $host) {
-                    $htline[] = '  RewriteCond %{HTTP_REFERER} ' . str_replace('.', '\.', $host) . '  [NC]';
-                }
-
-                $htline[] = '  RewriteRule .* - [F]';
-                $htline[] = '</IfModule>';
-                try {
-
-                    // update htaccess
-                    insert_with_markers($htaccess, 'wpReferralBlacklist ', $htline);
-                } catch (exception $e) {
-                    echo $e->getMessage();
-                }
-            }
-        }
+//        // .htaccess path
+//        $htaccess = ABSPATH . '.htaccess';
+//
+//        // does file exist and is writable?
+//        if (file_exists($htaccess) && is_writable($htaccess)) {
+//            /**
+//             * @todo test why doesn't work without this line
+//             */
+//            include_once ABSPATH . '/wp-admin/includes/misc.php';
+//            // load blacklist
+//            $theBlacklist = new blockList();
+//            $getBlacklist = $theBlacklist->theList();
+//            // check array
+//            if (!empty($getBlacklist)) {
+//                // build lines
+//                $htline = [];
+//                $htline[] = '<IfModule mod_rewrite.c>';
+//                $htline[] = '  RewriteEngine on';
+//                // loop it!
+//                foreach ($getBlacklist as $host) {
+//                    $htline[] = '  RewriteCond %{HTTP_REFERER} ' . str_replace('.', '\.', $host) . '  [NC]';
+//                }
+//
+//                $htline[] = '  RewriteRule .* - [F]';
+//                $htline[] = '</IfModule>';
+//                try {
+//
+//                    // update htaccess
+//                    insert_with_markers($htaccess, 'wpReferralBlacklist ', $htline);
+//                } catch (exception $e) {
+//                    echo $e->getMessage();
+//                }
+//            }
+//        }
     }
 
 }
