@@ -8,7 +8,9 @@ On my own server I do that at server level, but some of my clients have hosting,
 
 If You have WordPress site and no knowledge about or access to server settings, I made that for You!
 
-No need for configuration!  
+No need for configuration! 
+
+NO auto update, as we see that as possible as security hole.
 
 Plugin in background redirects referral spammer to blank page ( `about:blank` ). Redirect link can be altered via filter `wp_referralblock_redirect_uri`. 
 

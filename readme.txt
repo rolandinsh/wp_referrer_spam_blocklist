@@ -1,4 +1,4 @@
-=== WP referrer spam blacklist ===
+=== WP referrer spam blacklist (Ghost Spam in Google Analytics) ===
 Contributors: rolandinsh
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted
 License: GPL
@@ -15,6 +15,8 @@ WordPress plugin to fight with more than 270 referrer spammers (like semalt, but
 List of spammers in [FAQ](https://wordpress.org/plugins/wp-referrer-spam-blacklist/faq/).
 
 No need for configuration! Plugin in background redirects referral spammer to blank page ( about:blank ). Redirect link can be altered via filter `wp_referralblock_redirect_uri`. 
+
+NO auto update, as we see that as possible as security hole. We do not wan't Your site to get hacked.
 
 Plugin is for sites that can't edit their `.htaccess` or configure NGINX or Apache servers.
 
