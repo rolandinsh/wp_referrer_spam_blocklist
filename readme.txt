@@ -68,6 +68,9 @@ These from [Piwik's referrer-spam-blacklist](https://github.com/piwik/referrer-s
  
 == Changelog ==
 
+= 1.0.8 =
+* Enhance: spammer list updates (list version 1.3.5) 
+
 = 1.0.7 =
 * Enhance: spammer list updates (list version 1.3.4)
 * Enhance: compatibility with WordPress 4.3 
@@ -97,6 +100,9 @@ These from [Piwik's referrer-spam-blacklist](https://github.com/piwik/referrer-s
 Proof of concept
 
 == Upgrade Notice ==
+
+= 1.0.8 =
+* Enhance: spammer list updates (list version 1.3.5) 
 
 = 1.0.7 =
 * Enhance: spammer list updates (list version 1.3.4)
