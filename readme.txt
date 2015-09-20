@@ -5,8 +5,8 @@ License: GPL
 License URI: http://simplemediacode.com/license/gpl/
 Tags: referral spam, anti-spam, antispam, comment moderation, comment spam, comments, contact form spam, spam, protection, block spam, spam blocker, spam filter, spambot, bp, buddypress, bbpress, redirect, semalt, seo, analytics, analytics block, analytics spam, block google spam, google spam, semalt.com, spam attack, ghost referrers, google analytics, google analytics referral spam, google referral spam, piwik,
 Requires at least: 4.0
-Tested up to: 4.3
-Stable tag: 1.0.7
+Tested up to: 4.3.1
+Stable tag: 1.0.8
 
 WordPress plugin to fight with more than 270 referrer spammers (like semalt, buttons-for-website and many more).
 
