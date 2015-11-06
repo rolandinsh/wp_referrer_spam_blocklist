@@ -107,8 +107,6 @@ class wpReferralBlacklist
      */
     public function setPluginMeta($links, $file)
     {
-        //$plugin = plugin_basename(__FILE__);
-
         if ($file == WPRSBFILE) {
             $links = array_merge($links, array(
                 '<a href="http://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV?tag=rolandinshde-21">' . __("My Amazon.DE wishlist", "wprsb") . '</a>',
