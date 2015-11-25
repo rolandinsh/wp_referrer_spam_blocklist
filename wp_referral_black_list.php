@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: WP referrer spam blacklist (Ghost Spam in Google Analytics)
- * Plugin URI: http://http://simplemediacode.com/?utm_source=WPplugin%3Awp-referrer-spam-blacklist&utm_medium=wordpressplugin&utm_campaign=FreeWordPressPlugins&utm_content=v-1-0-11
+ * Plugin URI: http://http://simplemediacode.com/?utm_source=WPplugin%3Awp-referrer-spam-blacklist&utm_medium=wordpressplugin&utm_campaign=FreeWordPressPlugins&utm_content=v-1-0-12
  * Description: WordPress plugin to fight with referrer spammers (like semalt, buttons-for-website and many more) and do not mess Google Analytics
- * Version: 1.0.11
- * Stable tag: 1.0.11
+ * Version: 1.0.12
+ * Stable tag: 1.0.12
  * Requires at least: 4.0
  * Tested up to: 4.3.1
  * Author: Rolands Umbrovskis
@@ -82,7 +82,7 @@ try {
  * @since 1.0.0
  */
     $wp_referralblock_debug = 'Caught exception: wpReferralBlacklist ' . $e->getMessage() . "\n";
-    // Akismet style
+ 
     if (apply_filters('wp_referralblock_debug_log', defined('WP_DEBUG_LOG') && WP_DEBUG_LOG)) {
         error_log(print_r(compact('wp_referralblock_debug'), true));
     }

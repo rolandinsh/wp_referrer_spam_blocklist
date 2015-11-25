@@ -26,7 +26,7 @@ class wpReferralBlacklist
 {
 
     public $version = '1.0.7';
-    public $internalversion = '1.0.20151115';
+    public $internalversion = '1.0.20151125';
     public $wprsbfolder = 'wp_referrer_spam_blacklist';
     public $wprsbline = 'wp-referrer-spam-blacklist';
 
