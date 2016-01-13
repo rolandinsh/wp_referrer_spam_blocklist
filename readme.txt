@@ -1,12 +1,12 @@
-=== WP referrer spam blacklist (fight Referrer Spam in Google Analytics) ===
+=== WP referrer spam blacklist (fight Referrer Spam in (Google/Piwik) Analytics) ===
 Contributors: rolandinsh
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted
 License: GPL
 License URI: http://simplemediacode.com/license/gpl/
 Tags: referral spam, anti-spam, antispam, comment moderation, comment spam, comments, contact form spam, spam, protection, block spam, spam blocker, spam filter, spambot, bp, buddypress, bbpress, redirect, semalt, seo, analytics, analytics block, analytics spam, block google spam, google spam, semalt.com, spam attack, ghost referrers, google analytics, google analytics referral spam, google referral spam, piwik,
 Requires at least: 4.0
-Tested up to: 4.4
-Stable tag: 1.2.201512301
+Tested up to: 4.4.1
+Stable tag: 1.2.201601131
 
 WordPress plugin to fight with 300 referrer spammers (like semalt, buttons-for-website and many more).
 
@@ -68,6 +68,9 @@ These from [Piwik's referrer-spam-blacklist](https://github.com/rolandinsh/wp_re
  
 == Changelog ==
 
+= 1.2.201601131 =
+* Enhance: spammer list updates (list version 1.3.12)
+
 = 1.2.201512301 =
 * Enhance: spammer list updates (list version 1.3.11)
 * Enhance: check if PHP class exists
@@ -119,6 +122,9 @@ These from [Piwik's referrer-spam-blacklist](https://github.com/rolandinsh/wp_re
 Proof of concept
 
 == Upgrade Notice ==
+
+= 1.2.201601131 =
+* Enhance: spammer list updates (list version 1.3.12)
 
 = 1.2.201512301 =
 * Enhance: spammer list updates (list version 1.3.11)
