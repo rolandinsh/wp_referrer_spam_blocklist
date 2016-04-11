@@ -1,16 +1,16 @@
 <?php
 /**
  * Plugin Name: WP referrer spam blacklist (Ghost Spam in Google Analytics)
- * Plugin URI: http://http://simplemediacode.com/?utm_source=WPplugin%3Awp-referrer-spam-blacklist&utm_medium=wordpressplugin&utm_campaign=FreeWordPressPlugins&utm_content=v-1.2.201603251
+ * Plugin URI: https://simplemediacode.com/?utm_source=WPplugin%3Awp-referrer-spam-blacklist&utm_medium=wordpressplugin&utm_campaign=FreeWordPressPlugins&utm_content=v-1.2.201604111
  * Description: WordPress plugin to fight with referrer spammers (like semalt, buttons-for-website and many more) and do not mess Google Analytics
- * Version: 1.2.201603251
- * Stable tag: 1.2.201603251
+ * Version: 1.2.201604111
+ * Stable tag: 1.2.201604111
  * Requires at least: 4.0
- * Tested up to: 4.4.2
+ * Tested up to: 4.5
  * Author: Rolands Umbrovskis
- * Author URI: http://umbrovskis.com
+ * Author URI: https://umbrovskis.com
  * License: SimpleMediaCode
- * License URI: http://simplemediacode.com/license/gpl/
+ * License URI: https://simplemediacode.com/license/gpl/
  */
 /*
   Copyright 2015-2016  Rolands Umbrovskis (info at SimpleMediaCode dot COM)

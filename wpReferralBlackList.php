@@ -27,7 +27,7 @@ if (!class_exists('wpReferralBlacklist')) {
     class wpReferralBlacklist
     {
 
-        public $version = '1.2.201603251';
+        public $version = '1.2.201604111';
         public $internalversion = '1.0.20151125';
         public $wprsbfolder = 'wp_referrer_spam_blacklist';
         public $wprsbline = 'wp-referrer-spam-blacklist';
@@ -98,8 +98,8 @@ if (!class_exists('wpReferralBlacklist')) {
          */
         public function headGen()
         {
-            echo "\n" . '<!-- Referral spam blacklist by Rolands Umbrovskis (rolandinsh) http://umbrovskis.com/ -->' . "\n";
-            echo "\n" . '<meta name="generator" content="http://simplemediacode.com/?utm_source=' . $this->wprsbline . '-' . $this->version . '" />' . "\n";
+            echo "\n" . '<!-- Referral spam blacklist by Rolands Umbrovskis (rolandinsh) https://umbrovskis.com/ -->' . "\n";
+            echo "\n" . '<meta name="generator" content="https://simplemediacode.com/?utm_source=' . $this->wprsbline . '-' . $this->version . '" />' . "\n";
         }
 
         /**
