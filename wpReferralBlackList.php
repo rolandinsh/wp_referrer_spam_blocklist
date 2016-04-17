@@ -27,7 +27,7 @@ if (!class_exists('wpReferralBlacklist')) {
     class wpReferralBlacklist
     {
 
-        public $version = '1.2.201604111';
+        public $version = '1.2.201604171';
         public $internalversion = '1.0.20151125';
         public $wprsbfolder = 'wp_referrer_spam_blacklist';
         public $wprsbline = 'wp-referrer-spam-blacklist';
@@ -72,7 +72,9 @@ if (!class_exists('wpReferralBlacklist')) {
          * */
         public function wpReferralblockRedirectUri($uri)
         {
-            return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : 'about:blank')); // https://youtu.be/yFE6qQ3ySXE?t=40s
+            // Sing with me :)
+            // https://youtu.be/yFE6qQ3ySXE?t=40s
+            return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : 'about:blank')); 
         }
 
         /**
@@ -98,7 +100,7 @@ if (!class_exists('wpReferralBlacklist')) {
          */
         public function headGen()
         {
-            echo "\n" . '<!-- Referral spam blacklist by Rolands Umbrovskis (rolandinsh) https://umbrovskis.com/ -->' . "\n";
+            echo "\n" . '<!-- Referral spam blacklist ' . $this->version . ' by Rolands Umbrovskis (rolandinsh) https://umbrovskis.com/ -->';
             echo "\n" . '<meta name="generator" content="https://simplemediacode.com/?utm_source=' . $this->wprsbline . '-' . $this->version . '" />' . "\n";
         }
 
