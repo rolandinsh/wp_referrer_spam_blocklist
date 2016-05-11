@@ -27,7 +27,7 @@ if (!class_exists('wpReferralBlacklist')) {
     class wpReferralBlacklist
     {
 
-        public $version = '1.2.201604171';
+        public $version = '1.2.201605111';
         public $internalversion = '1.0.20160511';
         public $wprsbfolder = 'wp_referrer_spam_blacklist';
         public $wprsbline = 'wp-referrer-spam-blacklist';
@@ -40,9 +40,6 @@ if (!class_exists('wpReferralBlacklist')) {
             add_action('init', array($this, 'inits'), 1);
             add_action('wp_head', array($this, 'headGen'));
             add_action('plugin_row_meta', array($this, 'setPluginMeta'), 10, 2);
-            // Load a text domain
-            // for future, if there will be client facing options
-            // load_plugin_textdomain('wprsb', false, dirname(plugin_basename(__FILE__)) . '/lang/');
         }
 
         public function inits()
@@ -63,7 +60,7 @@ if (!class_exists('wpReferralBlacklist')) {
          * */
         public function referral($uri)
         {
-            $refurl = $uri ? $uri : wp_get_referer();
+            $refurl = $uri ? $uri : isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : false;
             return strtolower($refurl);
         }
 
@@ -75,7 +72,7 @@ if (!class_exists('wpReferralBlacklist')) {
         {
             // Sing with me :)
             // https://youtu.be/yFE6qQ3ySXE?t=40s
-            return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : 'about:blank'));
+            return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : wp_die('Stop spamming!', 'BANNED!', array('response' => 403))));
         }
 
         /**
@@ -86,11 +83,14 @@ if (!class_exists('wpReferralBlacklist')) {
             include_once dirname(__FILE__) . '/blockList.php';
             $theBlocklist = new blockList();
             $getBlocklist = $theBlocklist->theList();
-            $refUri = $this->referral(wp_get_referer());
-            foreach ($getBlocklist as $block) {
-                if (strpos($refUri, $block) !== false) {
-                    wp_redirect($this->wpReferralblockRedirectUri(), 301);
-                    exit;
+            $getReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : false;
+            $refUri = $this->referral($getReferer);
+            if ((isset($refUri) && $refUri !== false) && ( isset($getReferer) && $getReferer !== false)) {
+                foreach ($getBlocklist as $block) {
+                    if (strpos($refUri, $block) !== false) {
+                        wp_redirect($this->wpReferralblockRedirectUri(), 301);
+                        exit;
+                    }
                 }
             }
         }
