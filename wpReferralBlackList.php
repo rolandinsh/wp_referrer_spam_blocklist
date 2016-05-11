@@ -28,7 +28,7 @@ if (!class_exists('wpReferralBlacklist')) {
     {
 
         public $version = '1.2.201604171';
-        public $internalversion = '1.0.20151125';
+        public $internalversion = '1.0.20160511';
         public $wprsbfolder = 'wp_referrer_spam_blacklist';
         public $wprsbline = 'wp-referrer-spam-blacklist';
 
@@ -63,7 +63,8 @@ if (!class_exists('wpReferralBlacklist')) {
          * */
         public function referral($uri)
         {
-            return $uri ? $uri : wp_get_referer();
+            $refurl = $uri ? $uri : wp_get_referer();
+            return strtolower($refurl);
         }
 
         /**
@@ -74,7 +75,7 @@ if (!class_exists('wpReferralBlacklist')) {
         {
             // Sing with me :)
             // https://youtu.be/yFE6qQ3ySXE?t=40s
-            return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : 'about:blank')); 
+            return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : 'about:blank'));
         }
 
         /**
@@ -85,11 +86,12 @@ if (!class_exists('wpReferralBlacklist')) {
             include_once dirname(__FILE__) . '/blockList.php';
             $theBlocklist = new blockList();
             $getBlocklist = $theBlocklist->theList();
-            $blockable = in_array(parse_url($this->referral(wp_get_referer()), PHP_URL_HOST), $getBlocklist);
-            $isOnBlocklist = $blockable ? $blockable : false;
-            if ($isOnBlocklist) {
-                wp_redirect($this->wpReferralblockRedirectUri(), 301);
-                exit;
+            $refUri = $this->referral(wp_get_referer());
+            foreach ($getBlocklist as $block) {
+                if (strpos($refUri, $block) !== false) {
+                    wp_redirect($this->wpReferralblockRedirectUri(), 301);
+                    exit;
+                }
             }
         }
 
