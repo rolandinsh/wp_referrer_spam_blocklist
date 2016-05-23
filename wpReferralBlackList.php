@@ -27,7 +27,7 @@ if (!class_exists('wpReferralBlacklist')) {
     class wpReferralBlacklist
     {
 
-        public $version = '1.2.201605111';
+        public $version = '1.2.201605231';
         public $internalversion = '1.0.20160511';
         public $wprsbfolder = 'wp_referrer_spam_blacklist';
         public $wprsbline = 'wp-referrer-spam-blacklist';
@@ -68,7 +68,7 @@ if (!class_exists('wpReferralBlacklist')) {
           where to redirect if blocked
          * @param string $uri
          * */
-        public function wpReferralblockRedirectUri($uri)
+        public function wpReferralblockRedirectUri($uri = false)
         {
             // Sing with me :)
             // https://youtu.be/yFE6qQ3ySXE?t=40s
@@ -88,7 +88,8 @@ if (!class_exists('wpReferralBlacklist')) {
             if ((isset($refUri) && $refUri !== false) && ( isset($getReferer) && $getReferer !== false)) {
                 foreach ($getBlocklist as $block) {
                     if (strpos($refUri, $block) !== false) {
-                        wp_redirect($this->wpReferralblockRedirectUri(), 301);
+                        // hooray, we found spammer!
+                        wp_redirect(apply_filters('wp_referralblock_blocker_uri', $this->wpReferralblockRedirectUri()), 301);
                         exit;
                     }
                 }
@@ -111,7 +112,7 @@ if (!class_exists('wpReferralBlacklist')) {
          *
          * @since 1.0.0
          */
-        public function setPluginMeta($links, $file)
+        public function setPluginMeta($links = array(), $file = false)
         {
             if ($file == WPRSBFILE) {
                 $links = array_merge($links, array(
