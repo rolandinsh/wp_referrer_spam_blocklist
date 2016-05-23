@@ -146,6 +146,10 @@ Proof of concept
 
 == Upgrade Notice ==
 
+= 1.2.201605231 =
+* FIXED: PHP 5.5+ Warning: Missing argument 1 for wpReferralBlacklist::wpReferralblockRedirectUri()
+
+
 = 1.2.201604171 =
 * Enhance: spammer list updates (list version 1.3.18)
 
