@@ -28,4 +28,50 @@ class blockList
         return apply_filters('wp_referralblock_list', $grandList);
     }
 
+    public function getRemotelist()
+    {
+
+        // Check for transient, if none, grab remote HTML file
+        if (false === ( $remotespammerlist = get_transient('wp_referralblock_remotelist') )) {
+
+            // Get remote list
+            $spammerslistresponse = wp_remote_get('https://raw.githubusercontent.com/piwik/referrer-spam-blacklist/master/spammers.txt');
+
+            // Check for error
+            if (is_wp_error($spammerslistresponse)) {
+//                $error_string = $spammerslistresponse->get_error_message();
+//                $reportError = array('spammerslistresponse' => $error_string );
+//                $this->remoteLog($reportError);
+                return;
+            }
+
+            // Parse remote spammer list
+            $data = wp_remote_retrieve_body($spammerslistresponse);
+
+            // Check for error
+            if (is_wp_error($data)) {
+//                $dataerror_string = $data->get_error_message();
+//                $dataerror_reportError = array('dataerror' => $dataerror_string );
+//                $this->remoteLog($dataerror_reportError);
+                return;
+            }
+            $spammerData = explode("\n", $data);
+
+            // Store remote spammer list in transient, expire after 12 hours
+            set_transient('wp_referralblock_remotelist', $data, 12 * HOUR_IN_SECONDS);
+        }
+
+        return $remotespammerlist;
+    }
+
+    public function remoteLog($error)
+    {
+        /**
+         * @todo Options for remote log to spot issues. OPTIONAL. 
+         *
+         */
+        return ;
+        
+    }
+
 }
