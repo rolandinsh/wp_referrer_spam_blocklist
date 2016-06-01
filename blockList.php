@@ -83,6 +83,7 @@ if (!class_exists('blockList')) {
                 "brothers-smaller.ru",
                 "budmavtomatika.com.ua",
                 "burger-imperia.com",
+                "burn-fat.ga",
                 "buttons-for-website.com",
                 "buttons-for-your-website.com",
                 "buy-cheap-online.info",
@@ -101,6 +102,7 @@ if (!class_exists('blockList')) {
                 "codysbbq.com",
                 "conciergegroup.org",
                 "connectikastudio.com",
+                "cookie-law-enforcement-dd.xyz",
                 "copyrightclaims.org",
                 "covadhosting.biz",
                 "cubook.supernew.org",
@@ -135,6 +137,7 @@ if (!class_exists('blockList')) {
                 "erot.co",
                 "escort-russian.com",
                 "este-line.com.ua",
+                "eu-cookie-law-enforcement2.xyz",
                 "euromasterclass.ru",
                 "europages.com.ru",
                 "eurosamodelki.ru",
@@ -204,6 +207,7 @@ if (!class_exists('blockList')) {
                 "kabbalah-red-bracelets.com",
                 "kambasoft.com",
                 "kazrent.com",
+                "keywords-monitoring-success.com",
                 "keywords-monitoring-your-success.com",
                 "kino-fun.ru",
                 "kino-key.info",
@@ -215,6 +219,7 @@ if (!class_exists('blockList')) {
                 "livefixer.com",
                 "lsex.xyz",
                 "luxup.ru",
+                "magicdiet.gq",
                 "makemoneyonline.com",
                 "makeprogress.ga",
                 "manualterap.roleforum.ru",
@@ -224,10 +229,12 @@ if (!class_exists('blockList')) {
                 "mebelcomplekt.ru",
                 "mebeldekor.com.ua",
                 "med-zdorovie.com.ua",
+                "meds-online24.com",
                 "minegam.com",
                 "mirobuvi.com.ua",
                 "mirtorrent.net",
                 "mobilemedia.md",
+                "mosrif.ru",
                 "moyakuhnia.ru",
                 "muscle-factory.com.ua",
                 "myftpupload.com",
@@ -245,18 +252,21 @@ if (!class_exists('blockList')) {
                 "onlinetvseries.me",
                 "onlywoman.org",
                 "ooo-olni.ru",
+                "ownshop.cf",
                 "ozas.net",
                 "palvira.com.ua",
                 "petrovka-online.com",
                 "photokitchendesign.com",
                 "pizza-imperia.com",
                 "pizza-tycoon.com",
+                "popads.net",
                 "pops.foundation",
                 "pornhub-forum.ga",
                 "pornhub-forum.uni.me",
                 "pornhub-ru.com",
                 "pornoforadult.com",
                 "pornogig.com",
+                "pornoklad.ru",
                 "portnoff.od.ua",
                 "pozdravleniya-c.ru",
                 "priceg.com",
@@ -285,6 +295,7 @@ if (!class_exists('blockList')) {
                 "rightenergysolutions.com.au",
                 "rospromtest.ru",
                 "rusexy.xyz",
+                "sad-torg.com.ua",
                 "sady-urala.ru",
                 "sanjosestartups.com",
                 "santasgift.ml",
@@ -299,6 +310,7 @@ if (!class_exists('blockList')) {
                 "seoanalyses.com",
                 "seoexperimenty.ru",
                 "seopub.net",
+                "sexsaoy.com",
                 "sexyali.com",
                 "sexyteens.hol.es",
                 "share-buttons.xyz",
@@ -336,6 +348,7 @@ if (!class_exists('blockList')) {
                 "steame.ru",
                 "success-seo.com",
                 "superiends.org",
+                "supervesti.ru",
                 "taihouse.ru",
                 "tattooha.com",
                 "tedxrj.com",
@@ -353,9 +366,11 @@ if (!class_exists('blockList')) {
                 "trafficmonetizer.org",
                 "trion.od.ua",
                 "uasb.ru",
+                "unpredictable.ga",
                 "uptime.com",
                 "uptimechecker.com",
                 "uzungil.com",
+                "varikozdok.ru",
                 "video--production.com",
                 "video-woman.com",
                 "videos-for-your-business.com",
@@ -371,6 +386,7 @@ if (!class_exists('blockList')) {
                 "websites-reviews.com",
                 "websocial.me",
                 "wmasterlead.com",
+                "woman-orgasm.ru",
                 "wordpress-crew.net",
                 "wordpresscore.com",
                 "ykecwqlixx.ru",
@@ -395,6 +411,51 @@ if (!class_exists('blockList')) {
             $grandList = array_merge($extraSites, $theList);
 
             return apply_filters('wp_referralblock_list', $grandList);
+        }
+
+        public function getRemotelist()
+        {
+
+            // Check for transient, if none, grab remote HTML file
+            if (false === ( $remotespammerlist = get_transient('wp_referralblock_remotelist') )) {
+
+                // Get remote list
+                $spammerslistresponse = wp_remote_get('https://raw.githubusercontent.com/piwik/referrer-spam-blacklist/master/spammers.txt');
+
+                // Check for error
+                if (is_wp_error($spammerslistresponse)) {
+//                $error_string = $spammerslistresponse->get_error_message();
+//                $reportError = array('spammerslistresponse' => $error_string );
+//                $this->remoteLog($reportError);
+                    return;
+                }
+
+                // Parse remote spammer list
+                $data = wp_remote_retrieve_body($spammerslistresponse);
+
+                // Check for error
+                if (is_wp_error($data)) {
+//                $dataerror_string = $data->get_error_message();
+//                $dataerror_reportError = array('dataerror' => $dataerror_string );
+//                $this->remoteLog($dataerror_reportError);
+                    return;
+                }
+                $spammerData = explode("\n", $data);
+
+                // Store remote spammer list in transient, expire after 12 hours
+                set_transient('wp_referralblock_remotelist', $data, 12 * HOUR_IN_SECONDS);
+            }
+
+            return $remotespammerlist;
+        }
+
+        public function remoteLog($error)
+        {
+            /**
+             * @todo Options for remote log to spot issues. OPTIONAL. 
+             *
+             */
+            return;
         }
 
     }
