@@ -22,147 +22,107 @@ if (!function_exists('add_action')) {
  * Main class wpReferralBlacklist
  * @since 1.0.0
  */
-class wpReferralBlacklist
-{
+if (!class_exists('wpReferralBlacklist')) {
 
-    public $version = '1.0.6';
-    public $wprsbfolder = 'wp_referrer_spam_blacklist';
-    public $wprsbline = 'wp-referrer-spam-blacklist';
-
-    const OPTINLVURI = '';
-    const OPTINENURI = '';
-
-    function __construct()
+    class wpReferralBlacklist
     {
-        add_action('init', array($this, 'inits'), 1);
-        add_action('wp_head', array($this, 'headGen'));
-        add_action('plugin_row_meta', array($this, 'setPluginMeta'), 10, 2);
-        // Load a text domain
-        //load_plugin_textdomain('wprsb', false, dirname(plugin_basename(__FILE__)) . '/lang/');
-    }
 
-    public function inits()
-    {
-        // dummy debug
-//        if (isset($_GET) && $_GET['htlist'] == 'doit') {
-//            // will write to .htaccess ; There is NO DELETE function YET!!!
-//            $this->htaccess();
-//        }
-        return $this->blocker();
-    }
+        public $version = '1.2.201605231';
+        public $internalversion = '1.0.20160511';
+        public $wprsbfolder = 'wp_referrer_spam_blacklist';
+        public $wprsbline = 'wp-referrer-spam-blacklist';
 
-    public static function log($wp_referralblock_debug)
-    {
-        if (apply_filters('wp_referralblock_debug_log', defined('WP_DEBUG_LOG') && WP_DEBUG_LOG)) {
-            error_log(print_r(compact('wp_referralblock_debug'), true));
+        const OPTINLVURI = ''; // reserved
+        const OPTINENURI = ''; // reserved
+
+        function __construct()
+        {
+            add_action('init', array($this, 'inits'), 1);
+            add_action('wp_head', array($this, 'headGen'));
+            add_action('plugin_row_meta', array($this, 'setPluginMeta'), 10, 2);
         }
-    }
 
-    /**
-      get referrer
-     * @param string $uri
-     * */
-    public function referral($uri)
-    {
-        return $uri ? $uri : wp_get_referer();
-    }
-
-    /**
-      where to redirect if blocked
-     * @param string $uri
-     * */
-    public function wpReferralblockRedirectUri($uri)
-    {
-        return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : 'about:blank')); // https://youtu.be/yFE6qQ3ySXE?t=40s
-    }
-
-    /**
-      blocker
-     * */
-    public function blocker()
-    {
-        include_once dirname(__FILE__) . '/blockList.php';
-        $theBlocklist = new blockList();
-        $getBlocklist = $theBlocklist->theList();
-        $blockable = in_array(parse_url($this->referral(wp_get_referer()), PHP_URL_HOST), $getBlocklist);
-        $isOnBlocklist = $blockable ? $blockable : false;
-        if ($isOnBlocklist) {
-            wp_redirect($this->wpReferralblockRedirectUri(), 301);
-            exit;
+        public function inits()
+        {
+            return $this->blocker();
         }
-    }
 
-    /**
-     * meta genarator
-     *
-     * @since 1.0.0
-     */
-    public function headGen()
-    {
-        echo "\n" . '<!-- Referral spam blacklist by Rolands Umbrovskis (rolandinsh) http://umbrovskis.com/ -->' . "\n";
-        echo "\n" . '<meta name="generator" content="http://simplemediacode.com/?utm_source=' . $this->wprsbline . '-' . $this->version . '" />' . "\n";
-    }
-
-    /**
-     * Set plugin meta information.
-     *
-     * @since 1.0.0
-     */
-    public function setPluginMeta($links, $file)
-    {
-        //$plugin = plugin_basename(__FILE__);
-
-        if ($file == WPRSBFILE) {
-            $links = array_merge($links, array(
-                '<a href="http://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV?tag=rolandinshde-21">' . __("My Amazon.DE wishlist", "wprsb") . '</a>',
-                '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted">' . __('Donate via PayPal', 'wprsb') . '</a>'
-            ));
+        public static function log($wp_referralblock_debug)
+        {
+            if (apply_filters('wp_referralblock_debug_log', defined('WP_DEBUG_LOG') && WP_DEBUG_LOG)) {
+                error_log(print_r(compact('wp_referralblock_debug'), true));
+            }
         }
-        return $links;
-    }
 
-    /**
-     * Write .htaccess.
-     *
-     * @since 1.1.0
-     * @todo safe update, delete
-     */
-    public function htaccess()
-    {
-//        // .htaccess path
-//        $htaccess = ABSPATH . '.htaccess';
-//
-//        // does file exist and is writable?
-//        if (file_exists($htaccess) && is_writable($htaccess)) {
-//            /**
-//             * @todo test why doesn't work without this line
-//             */
-//            include_once ABSPATH . '/wp-admin/includes/misc.php';
-//            // load blacklist
-//            $theBlacklist = new blockList();
-//            $getBlacklist = $theBlacklist->theList();
-//            // check array
-//            if (!empty($getBlacklist)) {
-//                // build lines
-//                $htline = [];
-//                $htline[] = '<IfModule mod_rewrite.c>';
-//                $htline[] = '  RewriteEngine on';
-//                // loop it!
-//                foreach ($getBlacklist as $host) {
-//                    $htline[] = '  RewriteCond %{HTTP_REFERER} ' . str_replace('.', '\.', $host) . '  [NC]';
-//                }
-//
-//                $htline[] = '  RewriteRule .* - [F]';
-//                $htline[] = '</IfModule>';
-//                try {
-//
-//                    // update htaccess
-//                    insert_with_markers($htaccess, 'wpReferralBlacklist ', $htline);
-//                } catch (exception $e) {
-//                    echo $e->getMessage();
-//                }
-//            }
-//        }
+        /**
+          get referrer
+         * @param string $uri
+         * */
+        public function referral($uri)
+        {
+            $refurl = $uri ? $uri : isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : false;
+            return strtolower($refurl);
+        }
+
+        /**
+          where to redirect if blocked
+         * @param string $uri
+         * */
+        public function wpReferralblockRedirectUri($uri = false)
+        {
+            // Sing with me :)
+            // https://youtu.be/yFE6qQ3ySXE?t=40s
+            return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : wp_die('Stop spamming!', 'BANNED!', array('response' => 403))));
+        }
+
+        /**
+          blocker
+         * */
+        public function blocker()
+        {
+            include_once dirname(__FILE__) . '/blockList.php';
+            $theBlocklist = new blockList();
+            $getBlocklist = $theBlocklist->theList();
+            $getReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : false;
+            $refUri = $this->referral($getReferer);
+            if ((isset($refUri) && $refUri !== false) && ( isset($getReferer) && $getReferer !== false)) {
+                foreach ($getBlocklist as $block) {
+                    if (strpos($refUri, $block) !== false) {
+                        // hooray, we found spammer!
+                        wp_redirect(apply_filters('wp_referralblock_blocker_uri', $this->wpReferralblockRedirectUri()), 301);
+                        exit;
+                    }
+                }
+            }
+        }
+
+        /**
+         * meta genarator
+         *
+         * @since 1.0.0
+         */
+        public function headGen()
+        {
+            echo "\n" . '<!-- Referral spam blacklist ' . $this->version . ' by Rolands Umbrovskis (rolandinsh) https://umbrovskis.com/ -->';
+            echo "\n" . '<meta name="generator" content="https://simplemediacode.com/?utm_source=' . $this->wprsbline . '-' . $this->version . '" />' . "\n";
+        }
+
+        /**
+         * Set plugin meta information.
+         *
+         * @since 1.0.0
+         */
+        public function setPluginMeta($links = array(), $file = false)
+        {
+            if ($file == WPRSBFILE) {
+                $links = array_merge($links, array(
+                    '<a href="http://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV?tag=rolandinshde-21">' . __("My Amazon.DE wishlist", "wprsb") . '</a>',
+                    '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted">' . __('Donate via PayPal', 'wprsb') . '</a>'
+                ));
+            }
+            return $links;
+        }
+
     }
 
 }
