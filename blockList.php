@@ -5,7 +5,7 @@ if (!class_exists('blockList')) {
     class blockList
     {
 
-        public $version = '1.3.20';
+        public $version = '1.3.21';
 
         function __construct()
         {
@@ -58,6 +58,7 @@ if (!class_exists('blockList')) {
                 "autovideobroadcast.com",
                 "aviva-limoux.com",
                 "azartclub.org",
+                "azlex.uz",
                 "baixar-musicas-gratis.com",
                 "baladur.ru",
                 "balitouroffice.com",
@@ -87,7 +88,9 @@ if (!class_exists('blockList')) {
                 "buttons-for-website.com",
                 "buttons-for-your-website.com",
                 "buy-cheap-online.info",
+                "buy-cheap-pills-order-online.com",
                 "buy-forum.ru",
+                "call-of-duty.info",
                 "cardiosport.com.ua",
                 "cartechnic.ru",
                 "cenokos.ru",
@@ -102,7 +105,32 @@ if (!class_exists('blockList')) {
                 "codysbbq.com",
                 "conciergegroup.org",
                 "connectikastudio.com",
+                "cookie-law-enforcement-aa.xyz",
+                "cookie-law-enforcement-bb.xyz",
+                "cookie-law-enforcement-cc.xyz",
                 "cookie-law-enforcement-dd.xyz",
+                "cookie-law-enforcement-ee.xyz",
+                "cookie-law-enforcement-ff.xyz",
+                "cookie-law-enforcement-gg.xyz",
+                "cookie-law-enforcement-hh.xyz",
+                "cookie-law-enforcement-ii.xyz",
+                "cookie-law-enforcement-jj.xyz",
+                "cookie-law-enforcement-kk.xyz",
+                "cookie-law-enforcement-ll.xyz",
+                "cookie-law-enforcement-mm.xyz",
+                "cookie-law-enforcement-nn.xyz",
+                "cookie-law-enforcement-oo.xyz",
+                "cookie-law-enforcement-pp.xyz",
+                "cookie-law-enforcement-qq.xyz",
+                "cookie-law-enforcement-rr.xyz",
+                "cookie-law-enforcement-ss.xyz",
+                "cookie-law-enforcement-tt.xyz",
+                "cookie-law-enforcement-uu.xyz",
+                "cookie-law-enforcement-vv.xyz",
+                "cookie-law-enforcement-ww.xyz",
+                "cookie-law-enforcement-xx.xyz",
+                "cookie-law-enforcement-yy.xyz",
+                "cookie-law-enforcement-zz.xyz",
                 "copyrightclaims.org",
                 "covadhosting.biz",
                 "cubook.supernew.org",
@@ -117,9 +145,12 @@ if (!class_exists('blockList')) {
                 "detskie-konstruktory.ru",
                 "dipstar.org",
                 "djekxa.ru",
+                "djonwatch.ru",
                 "dktr.ru",
+                "dogsrun.net",
                 "dojki-hd.com",
                 "domain-tracker.com",
+                "dominateforex.ml",
                 "domination.ml",
                 "doska-vsem.ru",
                 "dostavka-v-krym.com",
@@ -127,6 +158,7 @@ if (!class_exists('blockList')) {
                 "dvr.biz.ua",
                 "e-buyeasy.com",
                 "e-kwiaciarz.pl",
+                "easycommerce.cf",
                 "ecomp3.ru",
                 "econom.co",
                 "edakgfvwql.ru",
@@ -144,6 +176,7 @@ if (!class_exists('blockList')) {
                 "event-tracking.com",
                 "fast-wordpress-start.com",
                 "fbdownloader.com",
+                "fix-website-errors.com",
                 "floating-share-buttons.com",
                 "for-your.website",
                 "forex-procto.ru",
@@ -156,6 +189,7 @@ if (!class_exists('blockList')) {
                 "free-social-buttons7.xyz",
                 "free-traffic.xyz",
                 "free-video-tool.com",
+                "freenode.info",
                 "freewhatsappload.com",
                 "fsalas.com",
                 "generalporn.org",
@@ -163,9 +197,11 @@ if (!class_exists('blockList')) {
                 "get-free-social-traffic.com",
                 "get-free-traffic-now.com",
                 "get-your-social-buttons.info",
+                "getlamborghini.ga",
                 "getrichquick.ml",
                 "getrichquickly.info",
                 "ghazel.ru",
+                "ghostvisitor.com",
                 "girlporn.ru",
                 "gkvector.ru",
                 "glavprofit.ru",
@@ -175,6 +211,7 @@ if (!class_exists('blockList')) {
                 "googlsucks.com",
                 "guardlink.org",
                 "handicapvantoday.com",
+                "havepussy.com",
                 "hdmoviecamera.net",
                 "hdmoviecams.com",
                 "hongfanji.com",
@@ -214,6 +251,7 @@ if (!class_exists('blockList')) {
                 "kinopolet.net",
                 "knigonosha.net",
                 "konkursov.net",
+                "law-enforcement-bot-ff.xyz",
                 "laxdrills.com",
                 "littleberry.ru",
                 "livefixer.com",
@@ -234,6 +272,8 @@ if (!class_exists('blockList')) {
                 "mirobuvi.com.ua",
                 "mirtorrent.net",
                 "mobilemedia.md",
+                "monetizationking.net",
+                "moneytop.ru",
                 "mosrif.ru",
                 "moyakuhnia.ru",
                 "muscle-factory.com.ua",
@@ -249,6 +289,7 @@ if (!class_exists('blockList')) {
                 "o-o-8-o-o.com",
                 "o-o-8-o-o.ru",
                 "online-hit.info",
+                "online-templatestore.com",
                 "onlinetvseries.me",
                 "onlywoman.org",
                 "ooo-olni.ru",
@@ -288,6 +329,7 @@ if (!class_exists('blockList')) {
                 "rapidgator-porn.ga",
                 "rcb101.ru",
                 "rednise.com",
+                "replica-watch.ru",
                 "research.ifmo.ru",
                 "resellerclub.com",
                 "responsive-test.net",
@@ -342,6 +384,7 @@ if (!class_exists('blockList')) {
                 "socialbuttons.xyz",
                 "socialseet.ru",
                 "sohoindia.net",
+                "solitaire-game.ru",
                 "solnplast.ru",
                 "sosdepotdebilan.com",
                 "spravka130.ru",
@@ -371,6 +414,7 @@ if (!class_exists('blockList')) {
                 "uptimechecker.com",
                 "uzungil.com",
                 "varikozdok.ru",
+                "vesnatehno.com",
                 "video--production.com",
                 "video-woman.com",
                 "videos-for-your-business.com",
@@ -395,6 +439,8 @@ if (!class_exists('blockList')) {
                 "youporn-ru.com",
                 "yourserverisdown.com",
                 "zastroyka.org",
+                "zoominfo.com",
+                "zvetki.ru",
                 "годом.рф",
                 "грузоподъемные-машины.рф",
                 "лечениенаркомании.com",
@@ -413,6 +459,7 @@ if (!class_exists('blockList')) {
             return apply_filters('wp_referralblock_list', $grandList);
         }
 
+// not yet in active use. Testing compatibility.
         public function getRemotelist()
         {
 
@@ -456,6 +503,11 @@ if (!class_exists('blockList')) {
              *
              */
             return;
+        }
+
+        public function readList()
+        {
+            return get_transient('wp_referralblock_remotelist');
         }
 
     }
