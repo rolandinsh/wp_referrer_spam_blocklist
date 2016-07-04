@@ -8,7 +8,7 @@ Requires at least: 4.0
 Tested up to: 4.5.3
 Stable tag: 1.2.201607041
 
-WordPress plugin to fight with 300 referrer spammers (like semalt, buttons-for-website and many more).
+WordPress plugin to fight with 400 referrer spammers (like semalt, buttons-for-website and many more).
 
 == Description ==
 
