@@ -27,8 +27,8 @@ if (!class_exists('wpReferralBlacklist')) {
     class wpReferralBlacklist
     {
 
-        public $version = '1.2.201606241';
-        public $internalversion = '1.0.20160511';
+        public $version = '1.2.201607041';
+        public $internalversion = '1.0.20160704';
         public $wprsbfolder = 'wp_referrer_spam_blacklist';
         public $wprsbline = 'wp-referrer-spam-blacklist';
 
@@ -83,8 +83,7 @@ if (!class_exists('wpReferralBlacklist')) {
             include_once dirname(__FILE__) . '/blockList.php';
             $theBlocklist = new blockList();
             $getBlocklist = $theBlocklist->theList();
-            $httpref = $_SERVER['HTTP_REFERER'];
-            $getReferer = isset($httpref) ? $httpref : false;
+            $getReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : false;
             $refUri = $this->referral($getReferer);
             if ((isset($refUri) && $refUri !== false) && ( isset($getReferer) && $getReferer !== false)) {
                 foreach ($getBlocklist as $block) {
