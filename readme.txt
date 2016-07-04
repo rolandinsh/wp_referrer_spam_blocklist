@@ -6,7 +6,7 @@ License URI: http://simplemediacode.com/license/gpl/
 Tags: referral spam, anti-spam, antispam, comment moderation, comment spam, comments, contact form spam, spam, protection, block spam, spam blocker, spam filter, spambot, bp, buddypress, bbpress, redirect, semalt, seo, analytics, analytics block, analytics spam, block google spam, google spam, semalt.com, spam attack, ghost referrers, google analytics, google analytics referral spam, google referral spam, piwik,
 Requires at least: 4.0
 Tested up to: 4.5.3
-Stable tag: 1.2.201606241
+Stable tag: 1.2.201607041
 
 WordPress plugin to fight with 300 referrer spammers (like semalt, buttons-for-website and many more).
 
@@ -67,6 +67,9 @@ These from [Piwik's referrer-spam-blacklist](https://github.com/rolandinsh/wp_re
 1. none
  
 == Changelog ==
+
+= 1.2.201607041 =
+* BUG fix: whitescreen ([issue #5](https://github.com/rolandinsh/wp_referrer_spam_blacklist/issues/5))
 
 = 1.2.201606241 =
 * Enhance: spammer list updates (list version 1.3.21)
@@ -148,6 +151,9 @@ These from [Piwik's referrer-spam-blacklist](https://github.com/rolandinsh/wp_re
 Proof of concept
 
 == Upgrade Notice ==
+
+= 1.2.201607041 =
+* BUG fix: whitescreen ([issue #5](https://github.com/rolandinsh/wp_referrer_spam_blacklist/issues/5))
 
 = 1.2.201606241 =
 * Enhance: spammer list updates (list version 1.3.21)
