@@ -5,7 +5,7 @@ if (!class_exists('blockList')) {
     class blockList
     {
 
-        public $version = '1.3.22';
+        public $version = '1.3.23';
 
         function __construct()
         {
@@ -19,6 +19,8 @@ if (!class_exists('blockList')) {
              *
              */
             $theList = array("0n-line.tv",
+"1-99seo.com",
+"1-free-share-buttons.com",
 "100dollars-seo.com",
 "12masterov.com",
 "1pamm.ru",
@@ -174,6 +176,7 @@ if (!class_exists('blockList')) {
 "europages.com.ru",
 "eurosamodelki.ru",
 "event-tracking.com",
+"eyes-on-you.ga",
 "fast-wordpress-start.com",
 "fbdownloader.com",
 "fix-website-errors.com",
@@ -252,6 +255,7 @@ if (!class_exists('blockList')) {
 "kinopolet.net",
 "knigonosha.net",
 "konkursov.net",
+"law-check-two.xyz",
 "law-enforcement-ee.xyz",
 "law-enforcement-bot-ff.xyz",
 "law-enforcement-check-three.xyz",
@@ -261,6 +265,7 @@ if (!class_exists('blockList')) {
 "littleberry.ru",
 "livefixer.com",
 "lsex.xyz",
+"lumb.co",
 "luxup.ru",
 "magicdiet.gq",
 "makemoneyonline.com",
