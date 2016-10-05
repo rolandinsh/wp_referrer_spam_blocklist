@@ -5,7 +5,7 @@ if (!class_exists('blockList')) {
     class blockList
     {
 
-        public $version = '1.3.23';
+        public $version = '1.3.24';
 
         function __construct()
         {
@@ -98,6 +98,7 @@ if (!class_exists('blockList')) {
 "cenokos.ru",
 "cenoval.ru",
 "cezartabac.ro",
+"chcu.net",
 "chinese-amezon.com",
 "ci.ua",
 "cityadspix.com",
@@ -105,6 +106,7 @@ if (!class_exists('blockList')) {
 "clicksor.com",
 "coderstate.com",
 "codysbbq.com",
+"compliance-john.top",
 "conciergegroup.org",
 "connectikastudio.com",
 "cookie-law-enforcement-aa.xyz",
@@ -226,6 +228,7 @@ if (!class_exists('blockList')) {
 "hundejo.com",
 "hvd-store.com",
 "ico.re",
+"igadgetsworld.com",
 "igru-xbox.net",
 "ilikevitaly.com",
 "iloveitaly.ro",
@@ -354,6 +357,7 @@ if (!class_exists('blockList')) {
 "sanjosestartups.com",
 "santasgift.ml",
 "savetubevideo.com",
+"savetubevideo.info",
 "screentoolkit.com",
 "scripted.com",
 "search-error.com",
@@ -403,6 +407,7 @@ if (!class_exists('blockList')) {
 "solitaire-game.ru",
 "solnplast.ru",
 "sosdepotdebilan.com",
+"spin2016.cf",
 "spravka130.ru",
 "steame.ru",
 "success-seo.com",
