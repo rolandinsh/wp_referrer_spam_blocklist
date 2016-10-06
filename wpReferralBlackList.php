@@ -27,8 +27,8 @@ if (!class_exists('wpReferralBlacklist')) {
     class wpReferralBlacklist
     {
 
-        public $version = '1.2.201610051';
-        public $internalversion = '1.0.20160704';
+        public $version = '1.2.201610061';
+        public $internalversion = '1.0.20161006';
         public $wprsbfolder = 'wp_referrer_spam_blacklist';
         public $wprsbline = 'wp-referrer-spam-blacklist';
 
@@ -52,6 +52,37 @@ if (!class_exists('wpReferralBlacklist')) {
             if (apply_filters('wp_referralblock_debug_log', defined('WP_DEBUG_LOG') && WP_DEBUG_LOG)) {
                 error_log(print_r(compact('wp_referralblock_debug'), true));
             }
+        }
+        /**
+          get host Symfony way
+         * 
+         * @since 1.2.201610061
+         * */
+        function getHost()
+        {
+            $possibleHostSources = array('HTTP_X_FORWARDED_HOST', 'HTTP_HOST', 'SERVER_NAME', 'SERVER_ADDR');
+            $sourceTransformations = array(
+                "HTTP_X_FORWARDED_HOST" => function($value) {
+                    $elements = explode(',', $value);
+                    return trim(end($elements));
+                }
+            );
+            $host = '';
+            foreach ($possibleHostSources as $source) {
+                if (!empty($host))
+                    break;
+                if (empty($_SERVER[$source]))
+                    continue;
+                $host = $_SERVER[$source];
+                if (array_key_exists($source, $sourceTransformations)) {
+                    $host = $sourceTransformations[$source]($host);
+                }
+            }
+
+            // Remove port number from host
+            $host = preg_replace('/:\d+$/', '', $host);
+
+            return trim(esc_url_raw($host));
         }
 
         /**
@@ -83,7 +114,7 @@ if (!class_exists('wpReferralBlacklist')) {
             include_once dirname(__FILE__) . '/blockList.php';
             $theBlocklist = new blockList();
             $getBlocklist = $theBlocklist->theList();
-            $getReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : false;
+            $getReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : $this->getHost();
             $refUri = $this->referral($getReferer);
             if ((isset($refUri) && $refUri !== false) && ( isset($getReferer) && $getReferer !== false)) {
                 foreach ($getBlocklist as $block) {
