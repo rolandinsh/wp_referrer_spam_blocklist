@@ -5,7 +5,7 @@ if (!class_exists('blockList')) {
     class blockList
     {
 
-        public $version = '1.3.24';
+        public $version = '1.3.25';
 
         function __construct()
         {
@@ -403,6 +403,7 @@ if (!class_exists('blockList')) {
 "social-widget.xyz",
 "socialbuttons.xyz",
 "socialseet.ru",
+"socialtrade.biz",
 "sohoindia.net",
 "solitaire-game.ru",
 "solnplast.ru",
@@ -449,6 +450,7 @@ if (!class_exists('blockList')) {
 "webmaster-traffic.com",
 "webmonetizer.net",
 "website-analyzer.info",
+"website-speed-checker.site",
 "websites-reviews.com",
 "websocial.me",
 "wmasterlead.com",
@@ -471,6 +473,7 @@ if (!class_exists('blockList')) {
 "профмонтаж-врн.рф",
 "снятьдомвсевастополе.рф",
 "холодныйобзвон.рф",
+
             );
             // spam, virus, spyware, ...
             $extraSites = apply_filters('wp_referralblock_extralist', array(
