@@ -68,7 +68,7 @@ These from [Piwik's referrer-spam-blacklist](https://github.com/rolandinsh/wp_re
  
 == Changelog ==
 
-= 1.2.201610051 =
+= 1.2.201610241 =
 * Enhance: spammer list updates (list version 1.3.25)
 
 = 1.2.201610061 =
@@ -168,7 +168,7 @@ Proof of concept
 
 == Upgrade Notice ==
 
-= 1.2.201610051 =
+= 1.2.201610241 =
 * Enhance: spammer list updates (list version 1.3.25)
 
 = 1.2.201610061 =
