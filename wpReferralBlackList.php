@@ -91,7 +91,8 @@ if (!class_exists('wpReferralBlacklist')) {
          * */
         public function referral($uri)
         {
-            $refurl = $uri ? $uri : isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : false;
+            
+            $refurl = $uri ? $uri : (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : false);
             return strtolower($refurl);
         }
 
