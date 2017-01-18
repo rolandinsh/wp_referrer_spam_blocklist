@@ -27,7 +27,7 @@ if (!class_exists('wpReferralBlacklist')) {
     class wpReferralBlacklist
     {
 
-        public $version = '1.2.201612101';
+        public $version = '1.2.201701181';
         public $internalversion = '1.0.20161006';
         public $wprsbfolder = 'wp_referrer_spam_blacklist';
         public $wprsbline = 'wp-referrer-spam-blacklist';
@@ -53,6 +53,7 @@ if (!class_exists('wpReferralBlacklist')) {
                 error_log(print_r(compact('wp_referralblock_debug'), true));
             }
         }
+
         /**
           get host Symfony way
          * 
@@ -91,7 +92,7 @@ if (!class_exists('wpReferralBlacklist')) {
          * */
         public function referral($uri)
         {
-            
+
             $refurl = $uri ? $uri : (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : false);
             return strtolower($refurl);
         }
@@ -102,6 +103,15 @@ if (!class_exists('wpReferralBlacklist')) {
          * */
         public function wpReferralblockRedirectUri($uri = false)
         {
+            /** 
+             Experimantal W3 Total cache exclude error
+             * @since 1.2.201701181          
+             */
+            define('DONOTCACHEPAGE', true);
+            define('DONOTCACHEDB', true);
+            define('DONOTMINIFY', true);
+            define('DONOTCDN', true);
+            define('DONOTCACHEOBJECT', true);
             // Sing with me :)
             // https://youtu.be/yFE6qQ3ySXE?t=40s
             return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : wp_die('Stop spamming!', 'BANNED!', array('response' => 403))));

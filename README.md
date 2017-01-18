@@ -1,6 +1,6 @@
 # WordPress referrer spam blacklist plugin
 
-WordPress plugin to fight with 450 referrer spammers (like semalt, buttons-for-website and many more).
+WordPress plugin to fight with 500 referrer spammers (like semalt, buttons-for-website and many more).
 
 Via [my LinkedIN post](http://go.mediabox.lv/1LbSuKq): Few months ago I started to collect referral spam pages in private file un bitbucket.org. Problem was that I did not know all spammers. Then, few weeks ago, I found that Piwik (Open source analytics) started their own "project", and they did the same thing I did - collected referral spam sites to block them from Your website.
 
