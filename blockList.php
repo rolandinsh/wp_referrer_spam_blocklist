@@ -5,7 +5,7 @@ if (!class_exists('blockList')) {
     class blockList
     {
 
-        public $version = '1.3.27';
+        public $version = '1.3.28';
 
         function __construct()
         {
@@ -59,6 +59,7 @@ if (!class_exists('blockList')) {
 "allwomen.info",
 "alpharma.net",
 "altermix.ua",
+"amazon-seo-service.com",
 "amt-k.ru",
 "anal-acrobats.hol.es",
 "analytics-ads.xyz",
@@ -196,8 +197,11 @@ if (!class_exists('blockList')) {
 "drupa.com",
 "dvr.biz.ua",
 "e-buyeasy.com",
+"e-commerce-seo.com",
+"e-commerce-seo1.com",
 "e-kwiaciarz.pl",
 "easycommerce.cf",
+"ecommerce-seo.org",
 "ecomp3.ru",
 "econom.co",
 "edakgfvwql.ru",
@@ -222,6 +226,7 @@ if (!class_exists('blockList')) {
 "forex-procto.ru",
 "forsex.info",
 "forum69.info",
+"free-fb-traffic.com",
 "free-floating-buttons.com",
 "free-share-buttons.com",
 "free-social-buttons.com",
@@ -232,6 +237,7 @@ if (!class_exists('blockList')) {
 "freenode.info",
 "freewhatsappload.com",
 "fsalas.com",
+"gearcraft.us",
 "generalporn.org",
 "germes-trans.com",
 "get-free-social-traffic.com",
@@ -247,6 +253,7 @@ if (!class_exists('blockList')) {
 "glavprofit.ru",
 "gobongo.info",
 "goodprotein.ru",
+"google-liar.ru",
 "googlemare.com",
 "googlsucks.com",
 "guardlink.org",
@@ -279,6 +286,7 @@ if (!class_exists('blockList')) {
 "imperiafilm.ru",
 "increasewwwtraffic.info",
 "insider.pro",
+"interferencer.ru",
 "investpamm.ru",
 "iskalko.ru",
 "ispaniya-costa-blanca.ru",
@@ -295,6 +303,7 @@ if (!class_exists('blockList')) {
 "kinopolet.net",
 "knigonosha.net",
 "konkursov.net",
+"landoftracking.com",
 "laptop-4-less.com",
 "law-check-two.xyz",
 "law-enforcement-ee.xyz",
@@ -349,9 +358,11 @@ if (!class_exists('blockList')) {
 "ooo-olni.ru",
 "ownshop.cf",
 "ozas.net",
+"paidonlinesites.com",
 "palvira.com.ua",
 "petrovka-online.com",
 "photokitchendesign.com",
+"piulatte.cz",
 "pizza-imperia.com",
 "pizza-tycoon.com",
 "popads.net",
@@ -413,7 +424,9 @@ if (!class_exists('blockList')) {
 "sexsaoy.com",
 "sexyali.com",
 "sexyteens.hol.es",
+"share-buttons-for-free.com",
 "share-buttons.xyz",
+"sharebutton.io",
 "sharebutton.net",
 "sharebutton.to",
 "shop.xz618.com",
@@ -460,11 +473,13 @@ if (!class_exists('blockList')) {
 "tattooha.com",
 "tedxrj.com",
 "theguardlan.com",
+"thesmartsearch.net",
 "tomck.com",
 "top1-seo-service.com",
 "top10-way.com",
 "topquality.cf",
 "topseoservices.co",
+"track-rankings.online",
 "traffic-cash.xyz",
 "traffic2cash.org",
 "traffic2cash.xyz",
@@ -479,6 +494,7 @@ if (!class_exists('blockList')) {
 "uptimechecker.com",
 "uzungil.com",
 "varikozdok.ru",
+"vc.ru",
 "vesnatehno.com",
 "video--production.com",
 "video-woman.com",
@@ -519,7 +535,6 @@ if (!class_exists('blockList')) {
 "профмонтаж-врн.рф",
 "снятьдомвсевастополе.рф",
 "холодныйобзвон.рф",
-
 
             );
             // spam, virus, spyware, ...
