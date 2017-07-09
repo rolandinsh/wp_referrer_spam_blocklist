@@ -3,8 +3,8 @@
  * Plugin Name: WP referrer spam blacklist (Ghost Spam in Google Analytics)
  * Plugin URI: https://simplemediacode.com/?utm_source=WPplugin%3Awp-referrer-spam-blacklist&utm_medium=wordpressplugin&utm_campaign=FreeWordPressPlugins&utm_content=v-1.2.201701181
  * Description: WordPress plugin to fight with referrer spammers (like semalt, buttons-for-website and many more) and do not mess Google Analytics
- * Version: 1.2.201705311
- * Stable tag: 1.2.201705311
+ * Version: 1.2.201707101
+ * Stable tag: 1.2.201707101
  * Requires at least: 4.0
  * Tested up to: 4.8
  * Author: Rolands Umbrovskis

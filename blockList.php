@@ -5,7 +5,7 @@ if (!class_exists('blockList')) {
     class blockList
     {
 
-        public $version = '1.3.28';
+        public $version = '1.3.29';
 
         function __construct()
         {
@@ -182,6 +182,7 @@ if (!class_exists('blockList')) {
 "demenageur.com",
 "descargar-musica-gratis.net",
 "detskie-konstruktory.ru",
+"dev-seo.blog",
 "dipstar.org",
 "dividendo.ru",
 "djekxa.ru",
@@ -226,7 +227,9 @@ if (!class_exists('blockList')) {
 "forex-procto.ru",
 "forsex.info",
 "forum69.info",
+"foxweber.com",
 "free-fb-traffic.com",
+"free-fbook-traffic.com",
 "free-floating-buttons.com",
 "free-share-buttons.com",
 "free-social-buttons.com",
@@ -410,9 +413,11 @@ if (!class_exists('blockList')) {
 "santasgift.ml",
 "savetubevideo.com",
 "savetubevideo.info",
+"scansafe.net",
 "screentoolkit.com",
 "scripted.com",
 "search-error.com",
+"searchencrypt.com",
 "semalt.com",
 "semaltmedia.com",
 "seo-2-0.com",
@@ -528,13 +533,13 @@ if (!class_exists('blockList')) {
 "zastroyka.org",
 "zoominfo.com",
 "zvetki.ru",
-"годом.рф",
-"грузоподъемные-машины.рф",
-"лечениенаркомании.com",
-"непереводимая.рф",
-"профмонтаж-врн.рф",
-"снятьдомвсевастополе.рф",
-"холодныйобзвон.рф",
+"xn--c1acygb.xn--p1ai",
+"xn----8sbhefaln6acifdaon5c6f4axh.xn--p1ai",
+"xn--80aanaardaperhcem4a6i.com",
+"xn--80adgcaax6acohn6r.xn--p1ai",
+"xn----7sbho2agebbhlivy.xn--p1ai",
+"xn--80adaggc5bdhlfamsfdij4p7b.xn--p1ai",
+"xn--90acenikpebbdd4f6d.xn--p1ai",
 
             );
             // spam, virus, spyware, ...
