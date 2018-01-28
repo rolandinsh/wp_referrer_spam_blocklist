@@ -2,9 +2,9 @@
 
 WordPress plugin to fight with more than 521 referrer spammers (like semalt, buttons-for-website and many more).
 
-Via [my LinkedIN post](http://go.mediabox.lv/1LbSuKq): Few months ago I started to collect referral spam pages in private file un bitbucket.org. Problem was that I did not know all spammers. Then, few weeks ago, I found that Piwik (Open source analytics) started their own "project", and they did the same thing I did - collected referral spam sites to block them from Your website.
+Via [my LinkedIN post](http://go.mediabox.lv/1LbSuKq): Few months ago I started to collect referral spam pages in private file un bitbucket.org. Problem was that I did not know all spammers. Then, few weeks ago, I found that Matomo (Open source analytics) started their own "project", and they did the same thing I did - collected referral spam sites to block them from Your website.
 
-On my own server I do that at server level, but some of my clients have hosting, where You can not edit server settings. This week I came up with another solution - Wordpress plugin "WP referrer spam blacklist". I will update list every week from [Piwik's community-contributed list of spammers](https://github.com/piwik/referrer-spam-blacklist).
+On my own server I do that at server level, but some of my clients have hosting, where You can not edit server settings. This week I came up with another solution - Wordpress plugin "WP referrer spam blacklist". I will update list every week from [Matomo's community-contributed list of spammers](https://github.com/matomo-org/referrer-spam-blacklist).
 
 If You have WordPress site and no knowledge about or access to server settings, I made that for You!
 
@@ -43,7 +43,7 @@ to link-counting algorithms that search engines use.`
 
 ## How to add new spammer?
 
-Do it on Piwik's project: https://github.com/piwik/referrer-spam-blacklist 
+Do it on Matomo's project: https://github.com/matomo-org/referrer-spam-blacklist
 
 ## Was usefull?
 
