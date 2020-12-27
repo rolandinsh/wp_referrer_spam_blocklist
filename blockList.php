@@ -5,7 +5,7 @@ if (!class_exists('blockList')) {
     class blockList
     {
 
-        public $version = '1.3.31';
+        public $version = '1.4.0';
         var $thisdir;
 
         function __construct()

@@ -156,10 +156,13 @@ if (!class_exists('wpReferralBlacklist')) {
         public function setPluginMeta($links = [], $file = false)
         {
             if ($file == WPRSBFILE) {
-                $links = array_merge($links, [
-                    '<a href="http://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV?tag=rolandinshde-21">' . __("My Amazon.DE wishlist", "wprsb") . '</a>',
-                    '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted">' . __('Donate via PayPal', 'wprsb') . '</a>'
-                ]);
+                $links = array_merge(
+                    $links, 
+                    [
+                        '<a href="https://github.com/rolandinsh">' . __('Github', 'wprsb') . '</a>',
+                        '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted">' . __('Donate via PayPal', 'wprsb') . '</a>'
+                    ]
+                );
             }
             return $links;
         }
