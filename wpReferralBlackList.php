@@ -26,7 +26,7 @@ if (!class_exists('wpReferralBlacklist')) {
     class wpReferralBlacklist
     {
 
-        public $version = '1.2.201707101';
+        public $version = '1.2.202012211';
         public $internalversion = '1.0.20161006';
         public $wprsbfolder = 'wp_referrer_spam_blacklist';
         public $wprsbline = 'wp-referrer-spam-blacklist';
@@ -36,9 +36,9 @@ if (!class_exists('wpReferralBlacklist')) {
 
         function __construct()
         {
-            add_action('init', array($this, 'inits'), 1);
-            add_action('wp_head', array($this, 'headGen'));
-            add_action('plugin_row_meta', array($this, 'setPluginMeta'), 10, 2);
+            add_action('init', [$this, 'inits'], 2);
+            add_action('wp_head', [$this, 'headGen']);
+            add_action('plugin_row_meta', [$this, 'setPluginMeta'], 10, 2);
         }
 
         public function inits()
@@ -54,7 +54,7 @@ if (!class_exists('wpReferralBlacklist')) {
         }
 
         /**
-          get host Symfony way
+         * get host Symfony way
          * 
          * @since 1.2.201610061
          * */
@@ -86,7 +86,7 @@ if (!class_exists('wpReferralBlacklist')) {
         }
 
         /**
-          get referrer
+         * get referrer
          * @param string $uri
          * */
         public function referral($uri)
@@ -97,13 +97,13 @@ if (!class_exists('wpReferralBlacklist')) {
         }
 
         /**
-          where to redirect if blocked
+         * where to redirect if blocked
          * @param string $uri
          * */
         public function wpReferralblockRedirectUri($uri = false)
         {
             /** 
-             Experimantal W3 Total cache exclude error
+             * Experimantal W3 Total cache exclude error
              * @since 1.2.201701181          
              */
             define('DONOTCACHEPAGE', true);
@@ -117,7 +117,7 @@ if (!class_exists('wpReferralBlacklist')) {
         }
 
         /**
-          blocker
+         * blocker
          * */
         public function blocker()
         {
@@ -153,13 +153,13 @@ if (!class_exists('wpReferralBlacklist')) {
          *
          * @since 1.0.0
          */
-        public function setPluginMeta($links = array(), $file = false)
+        public function setPluginMeta($links = [], $file = false)
         {
             if ($file == WPRSBFILE) {
-                $links = array_merge($links, array(
+                $links = array_merge($links, [
                     '<a href="http://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV?tag=rolandinshde-21">' . __("My Amazon.DE wishlist", "wprsb") . '</a>',
                     '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted">' . __('Donate via PayPal', 'wprsb') . '</a>'
-                ));
+                ]);
             }
             return $links;
         }

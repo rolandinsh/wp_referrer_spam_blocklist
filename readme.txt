@@ -1,14 +1,14 @@
-=== WP referrer spam blacklist (fight 521+ Referrer Spammers in (Google/Matomo) Analytics) ===
+=== WP referrer spam blacklist (fight 2040+ Referrer Spammers in (Google/Matomo) Analytics) ===
 Contributors: rolandinsh
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted
 License: GPL
 License URI: https://simplemediacode.com/license/gpl/
 Tags: referral spam, anti-spam, antispam, comment moderation, comment spam, comments, contact form spam, spam, protection, block spam, spam blocker, spam filter, spambot, bp, buddypress, bbpress, redirect, semalt, seo, analytics, analytics block, analytics spam, block google spam, google spam, semalt.com, spam attack, ghost referrers, google analytics, google analytics referral spam, google referral spam, piwik, matomo
 Requires at least: 4.0
-Tested up to: 4.8
-Stable tag: 1.2.201707101
+Tested up to: 5.6
+Stable tag: 1.2.202012211
 
-WordPress plugin to fight with 500+ referrer spammers (like semalt, buttons-for-website and many more).
+WordPress plugin to fight with 2040+ referrer spammers (like semalt, buttons-for-website and many more).
 
 == Description ==
 
