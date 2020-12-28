@@ -22,7 +22,7 @@ Plugin is for sites that can't edit their `.htaccess` or configure NGINX or Apac
 
 Via [my LinkedIN post](http://go.mediabox.lv/1LbSuKq): Few months ago I started to collect referral spam pages in private file un bitbucket.org. Problem was that I did not know all spammers. Then, few weeks ago, I found that Matomo (Open source analytics) started their own "project", and they did the same thing I did - collected referral spam sites to block them from Your website.
 
-On my own server I do that at server level, but some of my clients have hosting, where You can not edit server settings. This week I came up with another solution - Wordpress plugin "WP referrer spam blocklist". I will update list every week from [Matomo's community-contributed list of spammers](https://github.com/matomo-org/referrer-spam-blacklist).
+On my own server I do that at server level, but some of my clients have hosting, where You can not edit server settings. This week I came up with another solution - Wordpress plugin "WP referrer spam blocklist". I will update list every week from [Matomo's community-contributed list of spammers](https://github.com/matomo-org/referrer-spam-list).
 
 If You have WordPress site and no knowledge about or access to server settings, I made that for You!
 
@@ -47,7 +47,7 @@ Other plugins by author: [itemprop WP for SERP/SEO Rich snippets](https://wordpr
 == Installation ==
 
 1. Upload to the `/wp-content/plugins/` directory
-2. Activate the WP referrer spam blacklist plugin through the 'Plugins' menu in WordPress
+2. Activate the WP referrer spam blocklist plugin through the 'Plugins' menu in WordPress
 3. Done
 
 WP-CLI
@@ -58,7 +58,7 @@ WP-CLI
 
 = What sites included? =
 
-These from [Matomo's referrer-spam-blacklist](https://github.com/rolandinsh/wp_referrer_spam_blocklist/blob/master/spammers.txt): 
+These from [Matomo's referrer-spam-list](https://github.com/rolandinsh/wp_referrer_spam_blocklist/blob/master/spammers.txt): 
 
 == Screenshots ==
 
