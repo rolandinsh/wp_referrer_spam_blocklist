@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: WP referrer spam blacklist (Ghost Spam in Google Analytics)
- * Plugin URI: https://simplemediacode.com/?utm_source=WPplugin%3Awp-referrer-spam-blacklist&utm_medium=wordpressplugin&utm_campaign=FreeWordPressPlugins&utm_content=v-1.2.201801281
+ * Plugin Name: WP referrer spam blocklist
+ * Plugin URI: https://simplemediacode.com/?utm_source=WPplugin%3Awp-referrer-spam-blacklist&utm_medium=wordpressplugin&utm_campaign=FreeWordPressPlugins&utm_content=v-1.3.1
  * Description: WordPress plugin to fight with referrer spammers (like semalt, buttons-for-website and many more) and do not mess Google Analytics
- * Version: 1.3.0
+ * Version: pre-1.3.1
  * Stable tag: 1.3.0
  * Requires at least: 4.0
  * Tested up to: 5.6
@@ -59,21 +59,21 @@ define('WPRSBFILE', basename(dirname(__FILE__)) . '/' . basename(__FILE__));
  * Locate  spammer list
  * @since 1.0.0
  */
-include_once dirname(__FILE__) . '/blockList.php'; // in case someone need it somewhere else in WordPress site or PHP project
+include_once __DIR__ . '/blockList.php'; // in case someone need it somewhere else in WordPress site or PHP project
 
 /**
  * Load main class
  * @since 1.0.0
  */
-include_once dirname(__FILE__) . '/wpReferralBlackList.php';
+include_once __DIR__ . '/wpReferralBlockList.php';
 
 try {
     
 /**
- * Do wpReferralBlacklist
+ * Do wpReferralBlockList
  * @since 1.0.0
  */
-     new wpReferralBlacklist();
+     new wpReferralBlockList();
 
 } catch (Exception $e) {
 
@@ -81,7 +81,7 @@ try {
  * Do Errors and debug
  * @since 1.0.0
  */
-    $wp_referralblock_debug = 'Caught exception: wpReferralBlacklist ' . $e->getMessage() . "\n";
+    $wp_referralblock_debug = 'Caught exception: wpReferralBlockList ' . $e->getMessage() . "\n";
  
     if (apply_filters('wp_referralblock_debug_log', defined('WP_DEBUG_LOG') && WP_DEBUG_LOG)) {
         error_log(print_r(compact('wp_referralblock_debug'), true));

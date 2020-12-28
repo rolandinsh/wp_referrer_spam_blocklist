@@ -1,10 +1,10 @@
-# WordPress referrer spam blacklist plugin
+# WordPress referrer spam blocklist plugin
 
 WordPress plugin to fight with more than 2040+ referrer spammers (like semalt, buttons-for-website and many more).
 
 Via [my LinkedIN post](http://go.mediabox.lv/1LbSuKq): Few months ago I started to collect referral spam pages in private file un bitbucket.org. Problem was that I did not know all spammers. Then, few weeks ago, I found that Matomo (Open source analytics) started their own "project", and they did the same thing I did - collected referral spam sites to block them from Your website.
 
-On my own server I do that at server level, but some of my clients have hosting, where You can not edit server settings. This week I came up with another solution - Wordpress plugin "WP referrer spam blacklist". I will update list every week from [Matomo's community-contributed list of spammers](https://github.com/matomo-org/referrer-spam-blacklist).
+On my own server I do that at server level, but some of my clients have hosting, where You can not edit server settings. This week I came up with another solution - Wordpress plugin "WP referrer spam blocklist". I will update list every week from [Matomo's community-contributed list of spammers](https://github.com/matomo-org/referrer-spam-blacklist).
 
 If You have WordPress site and no knowledge about or access to server settings, I made that for You!
 

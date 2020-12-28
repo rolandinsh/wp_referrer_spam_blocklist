@@ -3,8 +3,9 @@
  * Exit if accessed directly (security)
  * @since 1.0.0
  */
-if (!defined('ABSPATH'))
+if (!defined('ABSPATH')){
     exit;
+}
 
 /**
  * Double check. 
@@ -18,16 +19,16 @@ if (!function_exists('add_action')) {
 }
 
 /**
- * Main class wpReferralBlacklist
+ * Main class wpReferralBlockList
  * @since 1.0.0
  */
-if (!class_exists('wpReferralBlacklist')) {
+if (!class_exists('wpReferralBlockList')) {
 
-    class wpReferralBlacklist
+    class wpReferralBlockList
     {
 
-        public $version = '1.3.0';
-        public $internalversion = '1.0.20161006';
+        public $version = 'pre-1.3.1';
+        public $internalversion = '1.0.20201227';
         public $wprsbfolder = 'wp_referrer_spam_blacklist';
         public $wprsbline = 'wp-referrer-spam-blacklist';
 
@@ -61,18 +62,20 @@ if (!class_exists('wpReferralBlacklist')) {
         function getHost()
         {
             $possibleHostSources = array('HTTP_X_FORWARDED_HOST', 'HTTP_HOST', 'SERVER_NAME', 'SERVER_ADDR');
-            $sourceTransformations = array(
+            $sourceTransformations = [
                 "HTTP_X_FORWARDED_HOST" => function($value) {
                     $elements = explode(',', $value);
                     return trim(end($elements));
                 }
-            );
+            ];
             $host = '';
             foreach ($possibleHostSources as $source) {
-                if (!empty($host))
+                if (!empty($host)) {
                     break;
-                if (empty($_SERVER[$source]))
+                }
+                if (empty($_SERVER[$source])) {
                     continue;
+                }
                 $host = $_SERVER[$source];
                 if (array_key_exists($source, $sourceTransformations)) {
                     $host = $sourceTransformations[$source]($host);
@@ -113,7 +116,7 @@ if (!class_exists('wpReferralBlacklist')) {
             define('DONOTCACHEOBJECT', true);
             // Sing with me :)
             // https://youtu.be/yFE6qQ3ySXE?t=40s
-            return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : wp_die('Stop spamming!', 'BANNED!', array('response' => 403))));
+            return apply_filters('wp_referralblock_redirect_uri', ($uri ? $uri : wp_die('Stop spamming!', 'BANNED!', ['response' => 403])));
         }
 
         /**
@@ -121,7 +124,7 @@ if (!class_exists('wpReferralBlacklist')) {
          * */
         public function blocker()
         {
-            include_once dirname(__FILE__) . '/blockList.php';
+            include_once __DIR__ . '/blockList.php';
             $theBlocklist = new blockList();
             $getBlocklist = $theBlocklist->theList();
             $getReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : $this->getHost();
@@ -144,7 +147,7 @@ if (!class_exists('wpReferralBlacklist')) {
          */
         public function headGen()
         {
-            echo "\n" . '<!-- Referral spam blacklist ' . $this->version . ' by Rolands Umbrovskis (rolandinsh) https://umbrovskis.com/ -->';
+            echo "\n" . '<!-- Referral spam blocklist ' . $this->version . ' by Rolands Umbrovskis (rolandinsh) https://umbrovskis.com/ -->';
             echo "\n" . '<meta name="generator" content="https://simplemediacode.com/?utm_source=' . $this->wprsbline . '-' . $this->version . '" />' . "\n";
         }
 
@@ -159,7 +162,7 @@ if (!class_exists('wpReferralBlacklist')) {
                 $links = array_merge(
                     $links, 
                     [
-                        '<a href="https://github.com/rolandinsh">' . __('Github', 'wprsb') . '</a>',
+                        '<a href="https://github.com/rolandinsh/wp_referrer_spam_blacklist">' . __('Github', 'wprsb') . '</a>',
                         '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted">' . __('Donate via PayPal', 'wprsb') . '</a>'
                     ]
                 );
