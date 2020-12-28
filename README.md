@@ -45,8 +45,8 @@ Do it on Matomo's project: https://github.com/matomo-org/referrer-spam-blacklist
 
 ## Was usefull?
 
-* My Amazon wishlist: http://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV
-* Donate: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted 
+* My Amazon wishlist: [amazon.de](https://www.amazon.de/registry/wishlist/3ARHPQ1SLAMPV)
+* Donate: [on PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Z4ALL9WUMY3CL&lc=LV&item_name=Umbrovskis.%20WordPress%20plugins&item_number=004&currency_code=EUR&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted) 
 
 ## Included sites
 
@@ -55,3 +55,7 @@ Full [referrer spammers list](https://github.com/rolandinsh/wp_referrer_spam_blo
 + extra:
 
 contextualyield.com 
+
+## Icons
+
+Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/)
