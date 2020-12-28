@@ -16,8 +16,6 @@ Plugin in background redirects referral spammer to blank page ( `about:blank` ).
 
 Plugin is for sites that can't edit their `.htaccess` or configure NGINX or Apache servers.
 
-[![Throughput Graph](https://graphs.waffle.io/rolandinsh/wp_referrer_spam_blacklist/throughput.svg)](https://waffle.io/rolandinsh/wp_referrer_spam_blacklist/metrics/throughput) 
-
 ### Referrer spam
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Referer_spam): 
@@ -52,7 +50,7 @@ Do it on Matomo's project: https://github.com/matomo-org/referrer-spam-blacklist
 
 ## Included sites
 
-Full [referrer spammers list](https://github.com/rolandinsh/wp_referrer_spam_blacklist/blob/master/spammers.txt) (v1.3.29)
+Full [referrer spammers list](https://github.com/rolandinsh/wp_referrer_spam_blocklist/blob/master/spammers.txt) (v1.3.29)
 
 + extra:
 

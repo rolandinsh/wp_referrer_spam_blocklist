@@ -58,7 +58,7 @@ WP-CLI
 
 = What sites included? =
 
-These from [Matomo's referrer-spam-blacklist](https://github.com/rolandinsh/wp_referrer_spam_blacklist/blob/master/spammers.txt): 
+These from [Matomo's referrer-spam-blacklist](https://github.com/rolandinsh/wp_referrer_spam_blocklist/blob/master/spammers.txt): 
 
 == Screenshots ==
 
@@ -83,7 +83,7 @@ These from [Matomo's referrer-spam-blacklist](https://github.com/rolandinsh/wp_r
 * Enhance: spammer list updates (list version 1.3.27)
 
 = 1.2.201612101 =
-* FIX: [PHP Notice: Undefined index: HTTP_REFERER; Issue #7](https://github.com/rolandinsh/wp_referrer_spam_blacklist/issues/7)
+* FIX: [PHP Notice: Undefined index: HTTP_REFERER; Issue #7](https://github.com/rolandinsh/wp_referrer_spam_blocklist/issues/7)
 * Enhance: spammer list updates (list version 1.3.26)
 
 = 1.2.201610241 =
@@ -103,7 +103,7 @@ These from [Matomo's referrer-spam-blacklist](https://github.com/rolandinsh/wp_r
 
 
 = 1.2.201607041 =
-* BUG fix: whitescreen ([issue #5](https://github.com/rolandinsh/wp_referrer_spam_blacklist/issues/5))
+* BUG fix: whitescreen ([issue #5](https://github.com/rolandinsh/wp_referrer_spam_blocklist/issues/5))
 
 = 1.2.201606241 =
 * Enhance: spammer list updates (list version 1.3.21)
@@ -203,7 +203,7 @@ Proof of concept
 EXPERIMENTAL: W3 Total cache DONOTCACHE if hit by spammer
 
 = 1.2.201612101 =
-FIX: [PHP Notice: Undefined index: HTTP_REFERER; Issue #7](https://github.com/rolandinsh/wp_referrer_spam_blacklist/issues/7), Enhance: spammer list updates (list version 1.3.26)
+FIX: [PHP Notice: Undefined index: HTTP_REFERER; Issue #7](https://github.com/rolandinsh/wp_referrer_spam_blocklist/issues/7), Enhance: spammer list updates (list version 1.3.26)
 
 = 1.2.201610241 =
 * Enhance: spammer list updates (list version 1.3.25)
@@ -221,7 +221,7 @@ FIX: [PHP Notice: Undefined index: HTTP_REFERER; Issue #7](https://github.com/ro
 * Enhance: spammer list updates (list version 1.3.22)
 
 = 1.2.201607041 =
-* BUG fix: whitescreen ([issue #5](https://github.com/rolandinsh/wp_referrer_spam_blacklist/issues/5))
+* BUG fix: whitescreen ([issue #5](https://github.com/rolandinsh/wp_referrer_spam_blocklist/issues/5))
 
 = 1.2.201606241 =
 * Enhance: spammer list updates (list version 1.3.21)
